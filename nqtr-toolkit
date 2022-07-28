@@ -1,0 +1,3 @@
+git checkout -b NQTR-toolkit
+git checkout NQTR-toolkit
+git pull https://github.com/DRincs-Productions/NQTR-toolkit.git tool-only --allow-unrelated-histories
