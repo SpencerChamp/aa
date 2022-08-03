@@ -1,48 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/script.rpy", line 50, in prepare_screen
-    screen cubi_nav():
-  File "game/script.rpy", line 50, in prepare
-    screen cubi_nav():
-  File "game/script.rpy", line 51, in prepare
-    imagebutton auto "door_%s":
-  File "game/script.rpy", line 51, in prepare
-    imagebutton auto "door_%s":
-SyntaxError: invalid syntax (script.rpy, line 52)
+While running game code:
+  File "renpy/common/00keymap.rpy", line 473, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 473, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 492, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+AttributeError: 'NoneType' object has no attribute 'stores'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Applications/renpy-8.0.1-sdk/renpy/bootstrap.py", line 274, in bootstrap
-    renpy.main.main()
-  File "/Applications/renpy-8.0.1-sdk/renpy/main.py", line 660, in main
-    run(restart)
-  File "/Applications/renpy-8.0.1-sdk/renpy/main.py", line 95, in run
-    renpy.display.screen.prepare_screens()
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 976, in prepare_screens
-    s.ast.prepare_screen()
-  File "game/script.rpy", line 50, in prepare_screen
-    screen cubi_nav():
-  File "game/script.rpy", line 50, in prepare
-    screen cubi_nav():
-  File "game/script.rpy", line 51, in prepare
-    imagebutton auto "door_%s":
-  File "game/script.rpy", line 51, in prepare
-    imagebutton auto "door_%s":
-  File "/Applications/renpy-8.0.1-sdk/renpy/py3analysis.py", line 790, in ast_eval
-    return self.ast_eval_literal(expr)[0]
-  File "/Applications/renpy-8.0.1-sdk/renpy/py3analysis.py", line 772, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
-    raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
-    raise orig_e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (script.rpy, line 52)
+  File "renpy/common/00keymap.rpy", line 473, in script
+    python hide:
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1049, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 473, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 492, in _execute_python_hide
+    renpy.save("_reload-1", "reload save game")
+  File "/Applications/renpy-8.0.1-sdk/renpy/loadsave.py", line 382, in save
+    roots = renpy.game.log.freeze(None)
+  File "/Applications/renpy-8.0.1-sdk/renpy/rollback.py", line 1017, in freeze
+    self.complete(False)
+  File "/Applications/renpy-8.0.1-sdk/renpy/rollback.py", line 584, in complete
+    self.current.stores[name], self.current.delta_ebc[name] = delta
+AttributeError: 'NoneType' object has no attribute 'stores'
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Mon Aug  1 20:53:25 2022
+Wed Aug  3 12:51:52 2022

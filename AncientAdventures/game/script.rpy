@@ -7,7 +7,14 @@ define v = Character("Venus", color="FF0082")
 define c = Character("Cupid", color="FF93CA")
 
 
-# Image Buttons
+# Image Buttons/Screens
+
+screen cubi_nav():
+    imagebutton auto "door_%s":
+        xpos 1520
+        ypos 180
+        focus_mask True
+        action [Hide ("cubi_nav"), Jump ("insula_ext")]
 
 # The game starts here.
 
@@ -33,7 +40,7 @@ label start:
 
     scene black with fade
 
-    "I did not receive the most... traditional... education."
+    "I did not receive the most {i}traditional{/i} education."
 
     scene bg younglife with fade
 
@@ -43,20 +50,11 @@ label start:
 
     "Thanks to Julia's connections, I was able to secure a job at the port. My first day of work is tomorrow."
 
-
+label cubi:
     scene bg cubi int with fade
     show screen cubi_nav
 
-    screen cubi_nav():
-        imagebutton auto "door_%s":
-            xpos 1900
-            ypos 500
-            focus_mask True
-            action Jump ("insula_ext")
-
-
-    show p basic
-
+    show p basic with dissolve
 
     p "A dignified career and a new apartment..."
     p "No longer am I the orphaned whore-son. Today, I enter the noble city of Luna as a respectable citizen!"
@@ -69,11 +67,20 @@ label start:
 
     window hide
 
+    hide p shocked with dissolve
+
+    $ renpy.pause(hard=True)
+
 label insula_ext:
 
     scene bg insula
 
+    show p basic with dissolve
 
     p "The port is directly South, past the Forum. If I hit the Sea I've gone too far."
+
+    hide p basic with dissolve
+
+    $ renpy.pause(hard=True)
 
     return
