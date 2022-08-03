@@ -1,36 +1,58 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00keymap.rpy", line 473, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 473, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 492, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-AttributeError: 'NoneType' object has no attribute 'stores'
+  File "game/script.rpy", line 97, in script
+    show p basic with dissolve
+Exception: Focus_mask must be None, True, a displayable, or a callable.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00keymap.rpy", line 473, in script
-    python hide:
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1049, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 473, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 492, in _execute_python_hide
-    renpy.save("_reload-1", "reload save game")
-  File "/Applications/renpy-8.0.1-sdk/renpy/loadsave.py", line 382, in save
-    roots = renpy.game.log.freeze(None)
-  File "/Applications/renpy-8.0.1-sdk/renpy/rollback.py", line 1017, in freeze
-    self.complete(False)
-  File "/Applications/renpy-8.0.1-sdk/renpy/rollback.py", line 584, in complete
-    self.current.stores[name], self.current.delta_ebc[name] = delta
-AttributeError: 'NoneType' object has no attribute 'stores'
+  File "game/script.rpy", line 97, in script
+    show p basic with dissolve
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1658, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1653, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 2798, in do_with
+    return self.interact(trans_pause=True,
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3906, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 2602, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/transition.py", line 377, in render
+    bottom = render(self.old_widget, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 704, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/behavior.py", line 900, in render
+    raise Exception("Focus_mask must be None, True, a displayable, or a callable.")
+Exception: Focus_mask must be None, True, a displayable, or a callable.
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Wed Aug  3 12:51:52 2022
+Thu Aug  4 00:27:44 2022

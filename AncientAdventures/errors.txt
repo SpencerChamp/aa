@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 68: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    call screen cubi_nav
-    ^
+File "game/script.rpy", line 105: expected ':' not found.
+    label streetn1
+                  ^
+
+File "game/script.rpy", line 110: expected ':' not found.
+    label forum
+               ^
+
+File "game/script.rpy", line 115: expected ':' not found.
+    label street s1
+                 ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Wed Aug  3 16:02:00 2022
+Thu Aug  4 00:26:38 2022

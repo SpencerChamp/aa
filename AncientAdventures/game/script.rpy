@@ -16,6 +16,56 @@ screen cubi_nav():
         focus_mask True
         action [Hide ("cubi_nav"), Jump ("insula_ext")]
 
+screen ins_nav():
+    imagebutton auto "larrow_%s":
+        xpos 20
+        ypos 400
+        focus_mask None
+        action [Hide ("ins_nav"), Jump ("streetn1")]
+
+screen sn1_nav():
+    imagebutton auto "larrow_%s":
+        xpos 20
+        ypos 400
+        focus_mask None
+        action [Hide ("sn1_nav"), Jump ("forum")]
+    imagebutton auto "rarrow_%s":
+        xpos 1850
+        ypos 400
+        focus_mask None
+        action [Hide ("sn1_nav"), Jump ("insula_ext")]
+
+screen forum_nav():
+    imagebutton auto "larrow_%s":
+        xpos 20
+        ypos 400
+        focus_mask None
+        action [Hide ("forum_nav"), Jump ("streets1")]
+    imagebutton auto "rarrow_%s":
+        xpos 1850
+        ypos 400
+        focus_mask None
+        action [Hide ("forum_nav"), Jump ("streetn1")]
+
+screen ss1_nav():
+    imagebutton auto "larrow_%s":
+        xpos 20
+        ypos 400
+        focus_mask None
+        action [Hide ("ss1_nav"), Jump ("port")]
+    imagebutton auto "rarrow_%s":
+        xpos 1850
+        ypos 400
+        focus_mask None
+        action [Hide ("ss1_nav"), Jump ("forum")]
+
+screen port_nav():
+    imagebutton auto "rarrow_%s":
+        xpos 1850
+        ypos 400
+        focus_mask None
+        action [Hide ("port_nav"), Jump ("streets1")]
+
 # The game starts here.
 
 label start:
@@ -72,14 +122,38 @@ label cubi:
     $ renpy.pause(hard=True)
 
 label insula_ext:
-
     scene bg insula
+    show screen ins_nav
 
     show p basic with dissolve
 
     p "The port is directly South, past the Forum. If I hit the Sea I've gone too far."
 
     hide p basic with dissolve
+
+    $ renpy.pause(hard=True)
+
+label streetn1:
+    scene bg street n1
+    show screen sn1_nav
+
+    $ renpy.pause(hard=True)
+
+label forum:
+    scene bg forum
+    show screen forum_nav
+
+    $ renpy.pause(hard=True)
+
+label streets1:
+    scene bg street s1
+    show screen ss1_nav
+
+    $ renpy.pause(hard=True)
+
+label port:
+    scene bg port
+    show screen port_nav
 
     $ renpy.pause(hard=True)
 
