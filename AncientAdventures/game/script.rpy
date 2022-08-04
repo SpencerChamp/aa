@@ -5,9 +5,13 @@ define pr = Character("Priapus", color="354A36")
 define l = Character("Luna", color="EBF5F5")
 define v = Character("Venus", color="FF0082")
 define c = Character("Cupid", color="FF93CA")
-
+define b = Character("Boss", color="4F4F4F")
+define i =
 
 # Image Buttons/Screens
+
+#screen day_dis:
+    #text "{b}[weekday]{/b}" ypos .90 xpos .05
 
 screen cubi_nav():
     imagebutton auto "door_%s":
@@ -15,13 +19,16 @@ screen cubi_nav():
         ypos 180
         focus_mask True
         action [Hide ("cubi_nav"), Jump ("insula_ext")]
+    imagebutton auto "bed_%s":
+        focus_mask True
+        action [Jump ("cubi")]
 
 screen ins_nav():
     imagebutton auto "larrow_%s":
         xpos 20
         ypos 400
         focus_mask None
-        action [Hide ("ins_nav"), Jump ("streetn1")]
+        action [Hide ("ins_nav"), Jump ("street_n1")]
 
 screen sn1_nav():
     imagebutton auto "larrow_%s":
@@ -40,12 +47,12 @@ screen forum_nav():
         xpos 20
         ypos 400
         focus_mask None
-        action [Hide ("forum_nav"), Jump ("streets1")]
+        action [Hide ("forum_nav"), Jump ("street_s1")]
     imagebutton auto "rarrow_%s":
         xpos 1850
         ypos 400
         focus_mask None
-        action [Hide ("forum_nav"), Jump ("streetn1")]
+        action [Hide ("forum_nav"), Jump ("street_n1")]
 
 screen ss1_nav():
     imagebutton auto "larrow_%s":
@@ -64,7 +71,45 @@ screen port_nav():
         xpos 1850
         ypos 400
         focus_mask None
-        action [Hide ("port_nav"), Jump ("streets1")]
+        action [Hide ("port_nav"), Jump ("street_s1")]
+
+label day_change:
+    if weekday_number == 7:
+        $ weekday_number = 1
+    else:
+        $ weekday_number += 1
+
+    if weekday_number == 1:
+        $ weekday = "SOL"
+    elif weekday_number == 2:
+        $ weekday = "LUN"
+    elif weekday_number == 3:
+        $ weekday = "MAR"
+    elif weekday_number == 4:
+        $ weekday = "MER"
+    elif weekday_number == 5:
+        $ weekday = "IOV"
+    elif weekday_number == 6:
+        $ weekday = "VEN"
+    elif weekday_number == 7:
+        $ weekday = "SAT"
+    else:
+        $ weekday = ":/"
+    return
+
+default weekday_number = 1
+default weekday = "SOL"
+
+## NEW DAY SYS (guy was mean so i gave up) ##
+
+#default weekday = 0
+
+#label day_change
+    #$ weekday = (weekday+1) % 7
+    #return
+
+#define day_names = [ "SOL", "LUN", "MAR", "MER", "IOV", "VEN", "SAT" ]
+    #$ today = day_names(weekday)
 
 # The game starts here.
 
@@ -79,7 +124,7 @@ label start:
 
     scene bg baby with fade
 
-    "Julia, the Matron, brought me in. A swaddled babe, carrying only an amulet, inscribed with my name..."
+    "Iulia, the Matron, brought me in. A swaddled babe, carrying only an amulet, inscribed with my name..."
 
     python:
         pname = renpy.input("Name?", length=32)
@@ -98,16 +143,19 @@ label start:
 
     scene black with fade
 
-    "Thanks to Julia's connections, I was able to secure a job at the port. My first day of work is tomorrow."
+    "Thanks to Iulia's connections, I was able to secure a job at the port. My first day of work is tomorrow."
 
 label cubi:
     scene bg cubi int with fade
     show screen cubi_nav
+    show screen day_dis
+    call day_change()
 
     show p basic with dissolve
 
     p "A dignified career and a new apartment..."
-    p "No longer am I the orphaned whore-son. Today, I enter the noble city of Luna as a respectable citizen!"
+    p "No longer will I be the poor, orphaned whore-son."
+    p "Today, I enter the noble city of Luna as a respectable citizen!"
 
     window hide
     pause
@@ -127,13 +175,18 @@ label insula_ext:
 
     show p basic with dissolve
 
-    p "The port is directly South, past the Forum. If I hit the Sea I've gone too far."
+    p "The port is directly South, past the Forum."
+
+    show p basic:
+        xzoom -1
+
+    p "If I hit the sea I've gone too far."
 
     hide p basic with dissolve
 
     $ renpy.pause(hard=True)
 
-label streetn1:
+label street_n1:
     scene bg street n1
     show screen sn1_nav
 
@@ -145,7 +198,7 @@ label forum:
 
     $ renpy.pause(hard=True)
 
-label streets1:
+label street_s1:
     scene bg street s1
     show screen ss1_nav
 
@@ -154,6 +207,16 @@ label streets1:
 label port:
     scene bg port
     show screen port_nav
+
+    show p basic at left with dissolve:
+        xzoom -1
+
+    p "Hm... Iulia told me to talk to the "
+
+    pause .5
+
+    show p basic at left:
+        xzoom 1
 
     $ renpy.pause(hard=True)
 
