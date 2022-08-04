@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-08-03T22:19:51.375Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="zkHkr4WfHjYvMNd-g42T" version="20.2.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-04T09:07:36.888Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36" etag="Jw3d7TkV6G6CKjXLDRMS" version="20.2.2" type="github">
   <diagram id="yKrAoVffPklfNYVwHImy" name="Map">
     <mxGraphModel dx="946" dy="1688" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -192,7 +192,7 @@
         <mxCell id="shM3QNyYsKCEb9U_yPUu-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=classic;startFill=1;" edge="1" parent="1" source="shM3QNyYsKCEb9U_yPUu-3" target="shM3QNyYsKCEb9U_yPUu-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="shM3QNyYsKCEb9U_yPUu-3" value="Garden Shrine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="shM3QNyYsKCEb9U_yPUu-3" value="Garden Shrine" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="250" y="-660" width="90" height="90" as="geometry" />
         </mxCell>
         <mxCell id="shM3QNyYsKCEb9U_yPUu-5" value="Villa" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
