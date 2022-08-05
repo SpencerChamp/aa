@@ -2,11 +2,11 @@
 
 define p = Character("[pname]", color="9C0000")
 define pr = Character("Priapus", color="354A36")
-define l = Character("Luna", color="EBF5F5")
+define lun = Character("Luna", color="EBF5F5")
 define v = Character("Venus", color="FF0082")
 define c = Character("Cupid", color="FF93CA")
 define g = Character("Gurges", color="4F4F4F")
-define i = Character("Lupa")
+define lup = Character("Lupa")
 
 # Image Buttons/Screens
 
@@ -113,7 +113,7 @@ label day_change:
 default weekday_number = 1
 default weekday = "SOL"
 
-## NEW DAY SYS (guy was mean so i gave up) ##
+######## NEW DAY SYS (guy was mean so i gave up) ##########
 
 #default weekday = 0
 
@@ -144,7 +144,7 @@ label start:
         pname = pname.strip()
 
         if not pname:
-             pname = "Remus"
+            pname = "Remus"
 
     scene black with fade
 
@@ -282,22 +282,14 @@ label port:
 
     pause
 
-    p "I should head to the collegium's schola."
+    p "I should head to the schola."
 
     hide p basic with dissolve
 
+    $ renpy.pause(hard=True)
 
-
-
-
-
-
-
-
-
-
-
-
+label schola:
+    scene bg schola
 
     $ renpy.pause(hard=True)
 
