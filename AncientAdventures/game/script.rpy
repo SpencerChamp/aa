@@ -5,13 +5,13 @@ define pr = Character("Priapus", color="354A36")
 define l = Character("Luna", color="EBF5F5")
 define v = Character("Venus", color="FF0082")
 define c = Character("Cupid", color="FF93CA")
-define b = Character("Boss", color="4F4F4F")
-define i =
+define g = Character("Gurges", color="4F4F4F")
+define i = Character("Lupa")
 
 # Image Buttons/Screens
 
-#screen day_dis:
-    #text "{b}[weekday]{/b}" ypos .90 xpos .05
+screen day_dis:
+    text "{b}[weekday]{/b}" ypos .90 xpos .05
 
 screen cubi_nav():
     imagebutton auto "door_%s":
@@ -36,11 +36,13 @@ screen sn1_nav():
         ypos 400
         focus_mask None
         action [Hide ("sn1_nav"), Jump ("forum")]
+        tooltip "To the forum"
     imagebutton auto "rarrow_%s":
         xpos 1850
         ypos 400
         focus_mask None
         action [Hide ("sn1_nav"), Jump ("insula_ext")]
+        tooltip "Back home"
 
 screen forum_nav():
     imagebutton auto "larrow_%s":
@@ -48,11 +50,13 @@ screen forum_nav():
         ypos 400
         focus_mask None
         action [Hide ("forum_nav"), Jump ("street_s1")]
+        tooltip "South"
     imagebutton auto "rarrow_%s":
         xpos 1850
         ypos 400
         focus_mask None
         action [Hide ("forum_nav"), Jump ("street_n1")]
+        tooltip "North"
 
 screen ss1_nav():
     imagebutton auto "larrow_%s":
@@ -60,18 +64,27 @@ screen ss1_nav():
         ypos 400
         focus_mask None
         action [Hide ("ss1_nav"), Jump ("port")]
+        tooltip "To the port"
     imagebutton auto "rarrow_%s":
         xpos 1850
         ypos 400
         focus_mask None
         action [Hide ("ss1_nav"), Jump ("forum")]
+        tooltip "To the forum"
 
 screen port_nav():
     imagebutton auto "rarrow_%s":
         xpos 1850
-        ypos 400
+        ypos 300
         focus_mask None
         action [Hide ("port_nav"), Jump ("street_s1")]
+        tooltip "North"
+    imagebutton auto "rarrow_%s":
+        xpos 1850
+        ypos 500
+        focus_mask None
+        action [Hide ("port_nav"), Jump ("schola")]
+        tooltip "To the merchant schola"
 
 label day_change:
     if weekday_number == 7:
@@ -124,14 +137,14 @@ label start:
 
     scene bg baby with fade
 
-    "Iulia, the Matron, brought me in. A swaddled babe, carrying only an amulet, inscribed with my name..."
+    "Lupa, the matron, brought me in. A swaddled babe, carrying only an amulet, inscribed with my name..."
 
     python:
         pname = renpy.input("Name?", length=32)
         pname = pname.strip()
 
         if not pname:
-             pname = "Amator"
+             pname = "Remus"
 
     scene black with fade
 
@@ -139,11 +152,11 @@ label start:
 
     scene bg younglife with fade
 
-    "But I was treated with care, and learned much of business and finance along the way."
+    "But I was treated with care, and learned much of business and accounting along the way."
 
     scene black with fade
 
-    "Thanks to Iulia's connections, I was able to secure a job at the port. My first day of work is tomorrow."
+    "After saving up some money, I was able to afford a small apartment. And thanks to Lupa's connections, I secured a job at the port. My first day of work is tomorrow."
 
 label cubi:
     scene bg cubi int with fade
@@ -196,6 +209,13 @@ label forum:
     scene bg forum
     show screen forum_nav
 
+    show p basic with dissolve
+
+    p "The forum. The lively beating heart of any Roman city."
+    p "No time to enjoy it this morning"
+
+    hide p basic with dissolve
+
     $ renpy.pause(hard=True)
 
 label street_s1:
@@ -211,12 +231,73 @@ label port:
     show p basic at left with dissolve:
         xzoom -1
 
-    p "Hm... Iulia told me to talk to the "
+    p "Hm... Lupa told me to talk to the man in charge..."
+
+    window hide
+    pause
+
+    g "So! The wolf's cub decided to join us."
+
+    show g basic at right with dissolve
 
     pause .5
 
-    show p basic at left:
+    show p shocked at left:
         xzoom 1
+
+    p "Ah! You must be-"
+
+    g "Your employer. Gurges."
+
+    g "And you are..."
+
+    show p basic at left
+
+    p "I'm [pname[0]][pname[1]]-"
+
+    show g angry at right
+
+    g "Late! On your first day."
+
+    p "Sorry, sir, I-"
+
+    show g basic at right
+
+    g "I don't want to hear it. I've already taught a slave enough numbers to do your job for today."
+
+    g "So now you'll be cleaning the merchant collegium's headquarters."
+
+    g "Maybe there you'll learn to have respect for our great guild."
+
+    p "Yes sir. Right away."
+
+    show g basic at right:
+        xzoom -1
+
+    g "{i}grumbles{/i}"
+
+    hide g basic with dissolve
+
+    p "Well, at least I have a job still."
+
+    pause
+
+    p "I should head to the collegium's schola."
+
+    hide p basic with dissolve
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     $ renpy.pause(hard=True)
 
