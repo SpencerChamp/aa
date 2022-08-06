@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 179, in script
-    if $ totalday = 1:
-SyntaxError: invalid syntax (script.rpy, line 179)
+  File "game/script.rpy", line 327, in script
+    if $ time == 0:
+SyntaxError: invalid syntax (script.rpy, line 327)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 179, in script
-    if $ totalday = 1:
+  File "game/script.rpy", line 327, in script
+    if $ time == 0:
   File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
     if renpy.python.py_eval(condition):
   File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
@@ -20,9 +20,9 @@ Full traceback:
     raise orig_e
   File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
     tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (script.rpy, line 179)
+SyntaxError: invalid syntax (script.rpy, line 327)
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Sat Aug  6 11:11:14 2022
+Sat Aug  6 20:52:03 2022

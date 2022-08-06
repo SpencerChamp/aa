@@ -1,4 +1,4 @@
-# Names
+### Names, maybe do OOP later (self, name, respect, attraction)? ###
 
 define p = Character("[pname]", color="9C0000")
 define pr = Character("Priapus", color="354A36")
@@ -8,7 +8,7 @@ define c = Character("Cupid", color="FF93CA")
 define g = Character("Gurges", color="4F4F4F")
 define lup = Character("Lupa")
 
-# Image Buttons/Screens
+### Screens / Image Buttons (ill move into screens.rpy laterrrrrr) ###
 
 screen day_dis:
     text "{b}[weekday]{/b}" ypos .90 xpos .05
@@ -29,6 +29,9 @@ screen ins_nav():
         ypos 400
         focus_mask None
         action [Hide ("ins_nav"), Jump ("street_n1")]
+    imagebutton auto "insula_entry_%s":
+        focus_mask True
+        action [Hide ("ins_nav"), Jump ("cubi")]
 
 screen sn1_nav():
     imagebutton auto "larrow_%s":
@@ -86,13 +89,22 @@ screen port_nav():
         action [Hide ("port_nav"), Jump ("schola")]
         tooltip "To the merchant schola"
 
+screen port_g():
+    imagebutton idle "g basic.png":
+        xpos 1200
+        ypos 400
+        focus_mask True
+        action [Hide ("port_g"), Jump ("port_work")]
+
 label day_change:
     if weekday_number == 7:
         $ weekday_number = 1
         $ totalday += 1
+        $ time = 0
     else:
         $ weekday_number += 1
         $ totalday += 1
+        $ time = 0
 
     if weekday_number == 1:
         $ weekday = "SOL"
@@ -112,26 +124,26 @@ label day_change:
         $ weekday = ":/"
     return
 
+### Variables ###
+
 default weekday_number = 1
 default weekday = "SOL"
 default totalday = 0
+default time = 0
+default money = 3
 
-######## NEW DAY SYS (guy was mean so i gave up) ##########
-
-#default weekday = 0
-
-#label day_change
+### More Efficient Day System? (guy was mean so i gave up) ###
+    #default weekday = 0
+    #label day_change
     #$ weekday = (weekday+1) % 7
     #return
-
-#define day_names = [ "SOL", "LUN", "MAR", "MER", "IOV", "VEN", "SAT" ]
+    #define day_names = [ "SOL", "LUN", "MAR", "MER", "IOV", "VEN", "SAT" ]
     #$ today = day_names(weekday)
 
-##### DAILY FLAGS #####
-
-default dailyFlags = []
-
-#later, use: dailyFlags[event_ID] = value
+### Daily Flags? (Like a variable class that can wipe all at sleep?) ###
+    #default dailyFlags = []
+    #dailyFlags[worked] = 0
+    #later, use: dailyFlags[event_ID] = value
 
 
 # The game starts here.
@@ -143,11 +155,11 @@ label start:
 
     scene bg found with fade
 
-    "I was left outside a brothel."
+    "I was left in a basket, outside a brothel."
 
     scene bg baby with fade
 
-    "Lupa, the matron, brought me in. A swaddled babe, carrying only an amulet, inscribed with my name..."
+    "Lupa, the matron, brought me in. I wascarrying only an amulet, inscribed with my name..."
 
     python:
         pname = renpy.input("Name?", length=32)
@@ -166,7 +178,7 @@ label start:
 
     scene black with fade
 
-    "After saving up some money, I was able to afford a small apartment. And thanks to Lupa's connections, I secured a job at the port. My first day of work is tomorrow."
+    "After saving up some money, I was able to afford a small apartment. And thanks to Lupa's connections I secured a job at the port. My first day of work is tomorrow."
 
 label cubi_wake:
     scene bg cubi int with fade
@@ -192,15 +204,21 @@ label cubi_wake:
         hide p shocked with dissolve
    
     else:
-        p "{i}yawn{/i} Another day another denari..."
+        p "{i}yawn{/i}"
+        p "Another day another denari..."
 
         hide p basic
 
     $ renpy.pause(hard=True)
 
+label cubi:
+    scene bg cubi int
+    show screen cubi_nav
+
+    $ renpy.pause(hard=True)
+
 label insula_ext:
     scene bg insula
-    show screen ins_nav
 
     if totalday == 1:
         show p basic with dissolve
@@ -213,6 +231,8 @@ label insula_ext:
         p "If I hit the sea I've gone too far."
 
         hide p basic with dissolve
+
+    show screen ins_nav
 
     $ renpy.pause(hard=True)
 
@@ -304,6 +324,39 @@ label port:
         p "I should head to the schola."
 
         hide p basic with dissolve
+   
+    else:
+        if time == 0:
+                show screen port_g
+        
+
+    $ renpy.pause(hard=True)
+
+
+label port_work:
+    scene bg port with fade
+    
+    show p basic at left
+    show g basic at right
+
+    menu:
+        g "Well, at least you made it on time today."
+
+        "Work":
+            g "Good. Let's get started."
+
+            scene work with fade 
+
+            "Work was tiring. The shipments seemed to never stop coming."
+
+            $ time += 1
+
+            show g basic at right 
+            show p basic at left
+
+            g "Alright, decent work today. Enjoy your evening."
+
+            jump port
 
     $ renpy.pause(hard=True)
 
