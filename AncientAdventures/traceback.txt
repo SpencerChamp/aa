@@ -1,28 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 236, in script
-    p "Hm... Lupa told me to talk to the man in charge..."
-ScriptError: could not find label 'schola'.
+  File "game/script.rpy", line 179, in script
+    if $ totalday = 1:
+SyntaxError: invalid syntax (script.rpy, line 179)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "/Applications/renpy-8.0.1-sdk/renpy/bootstrap.py", line 274, in bootstrap
-    renpy.main.main()
-  File "/Applications/renpy-8.0.1-sdk/renpy/main.py", line 660, in main
-    run(restart)
-  File "/Applications/renpy-8.0.1-sdk/renpy/main.py", line 146, in run
-    renpy.execution.run_context(True)
-  File "/Applications/renpy-8.0.1-sdk/renpy/execution.py", line 938, in run_context
-    context.run()
-  File "game/script.rpy", line 236, in script
-    p "Hm... Lupa told me to talk to the man in charge..."
-  File "/Applications/renpy-8.0.1-sdk/renpy/script.py", line 927, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'schola'.
+  File "game/script.rpy", line 179, in script
+    if $ totalday = 1:
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
+    code = py_compile(code, 'eval')
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
+    raise e
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
+    raise orig_e
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (script.rpy, line 179)
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Fri Aug  5 19:10:34 2022
+Sat Aug  6 11:11:14 2022

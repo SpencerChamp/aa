@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 273: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a " at the end of the first line.)
-        p "
+File "game/script.rpy", line 190: reached end of line when expecting ':'.
+    elif totalday > 1
+                     ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Fri Aug  5 17:20:35 2022
+Sat Aug  6 11:02:20 2022

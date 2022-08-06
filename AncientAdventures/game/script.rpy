@@ -21,7 +21,7 @@ screen cubi_nav():
         action [Hide ("cubi_nav"), Jump ("insula_ext")]
     imagebutton auto "bed_%s":
         focus_mask True
-        action [Jump ("cubi")]
+        action [Jump ("cubi_wake")]
 
 screen ins_nav():
     imagebutton auto "larrow_%s":
@@ -89,8 +89,10 @@ screen port_nav():
 label day_change:
     if weekday_number == 7:
         $ weekday_number = 1
+        $ totalday += 1
     else:
         $ weekday_number += 1
+        $ totalday += 1
 
     if weekday_number == 1:
         $ weekday = "SOL"
@@ -112,6 +114,7 @@ label day_change:
 
 default weekday_number = 1
 default weekday = "SOL"
+default totalday = 0
 
 ######## NEW DAY SYS (guy was mean so i gave up) ##########
 
@@ -123,6 +126,13 @@ default weekday = "SOL"
 
 #define day_names = [ "SOL", "LUN", "MAR", "MER", "IOV", "VEN", "SAT" ]
     #$ today = day_names(weekday)
+
+##### DAILY FLAGS #####
+
+default dailyFlags = []
+
+#later, use: dailyFlags[event_ID] = value
+
 
 # The game starts here.
 
@@ -158,7 +168,7 @@ label start:
 
     "After saving up some money, I was able to afford a small apartment. And thanks to Lupa's connections, I secured a job at the port. My first day of work is tomorrow."
 
-label cubi:
+label cubi_wake:
     scene bg cubi int with fade
     show screen cubi_nav
     show screen day_dis
@@ -166,19 +176,25 @@ label cubi:
 
     show p basic with dissolve
 
-    p "A dignified career and a new apartment..."
-    p "No longer will I be the poor, orphaned whore-son."
-    p "Today, I enter the noble city of Luna as a respectable citizen!"
+    if totalday == 1:
+        p "A dignified career and a new apartment..."
+        p "No longer will I be the poor, orphaned whore-son."
+        p "Today, I enter the noble city of Luna as a respectable citizen!"
 
-    window hide
-    pause
-    show p shocked
+        window hide
+        pause
+        show p shocked
 
-    p "Damn, I was supposed to be at the port before sunrise!"
+        p "Damn, I was supposed to be at the port before sunrise!"
 
-    window hide
+        window hide
 
-    hide p shocked with dissolve
+        hide p shocked with dissolve
+   
+    else:
+        p "{i}yawn{/i} Another day another denari..."
+
+        hide p basic
 
     $ renpy.pause(hard=True)
 
@@ -186,16 +202,17 @@ label insula_ext:
     scene bg insula
     show screen ins_nav
 
-    show p basic with dissolve
+    if totalday == 1:
+        show p basic with dissolve
 
-    p "The port is directly South, past the Forum."
+        p "The port is directly South, past the Forum."
 
-    show p basic:
-        xzoom -1
+        show p basic:
+            xzoom -1
 
-    p "If I hit the sea I've gone too far."
+        p "If I hit the sea I've gone too far."
 
-    hide p basic with dissolve
+        hide p basic with dissolve
 
     $ renpy.pause(hard=True)
 
@@ -209,12 +226,13 @@ label forum:
     scene bg forum
     show screen forum_nav
 
-    show p basic with dissolve
+    if totalday == 1:
+        show p basic with dissolve
 
-    p "The forum. The lively beating heart of any Roman city."
-    p "No time to enjoy it this morning"
+        p "The forum. The lively beating heart of any Roman city."
+        p "No time to enjoy it this morning."
 
-    hide p basic with dissolve
+        hide p basic with dissolve
 
     $ renpy.pause(hard=True)
 
@@ -228,63 +246,64 @@ label port:
     scene bg port
     show screen port_nav
 
-    show p basic at left with dissolve:
-        xzoom -1
+    if totalday == 1:
+        show p basic at left with dissolve:
+            xzoom -1
 
-    p "Hm... Lupa told me to talk to the man in charge..."
+        p "Hm... Lupa told me to talk to the man in charge..."
 
-    window hide
-    pause
+        window hide
+        pause
 
-    g "So! The wolf's cub decided to join us."
+        g "So! The wolf's cub decided to join us."
 
-    show g basic at right with dissolve
+        show g basic at right with dissolve
 
-    pause .5
+        pause .5
 
-    show p shocked at left:
-        xzoom 1
+        show p shocked at left:
+            xzoom 1
 
-    p "Ah! You must be-"
+        p "Ah! You must be-"
 
-    g "Your employer. Gurges."
+        g "Your employer. Gurges."
 
-    g "And you are..."
+        g "And you are..."
 
-    show p basic at left
+        show p basic at left
 
-    p "I'm [pname[0]][pname[1]]-"
+        p "I'm [pname[0]][pname[1]]-"
 
-    show g angry at right
+        show g angry at right
 
-    g "Late! On your first day."
+        g "Late! On your first day."
 
-    p "Sorry, sir, I-"
+        p "Sorry, sir, I-"
 
-    show g basic at right
+        show g basic at right
 
-    g "I don't want to hear it. I've already taught a slave enough numbers to do your job for today."
+        g "I don't want to hear it. I've already taught a slave enough numbers to do your job for today."
 
-    g "So now you'll be cleaning the merchant collegium's headquarters."
+        g "So now you'll be cleaning the merchant collegium's headquarters."
 
-    g "Maybe there you'll learn to have respect for our great guild."
+        g "Maybe there you'll learn to have respect for our great guild."
 
-    p "Yes sir. Right away."
+        p "Yes sir. Right away."
 
-    show g basic at right:
-        xzoom -1
+        show g basic at right:
+            xzoom -1
 
-    g "{i}grumbles{/i}"
+        g "{i}grumbles{/i}"
 
-    hide g basic with dissolve
+        hide g basic with dissolve
 
-    p "Well, at least I have a job still."
+        p "Well, at least I still have a job."
 
-    pause
+        pause
 
-    p "I should head to the schola."
+        p "I should head to the schola."
 
-    hide p basic with dissolve
+        hide p basic with dissolve
 
     $ renpy.pause(hard=True)
 
