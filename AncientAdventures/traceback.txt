@@ -1,28 +1,126 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 327, in script
-    if $ time == 0:
-SyntaxError: invalid syntax (script.rpy, line 327)
+  File "game/script.rpy", line 359, in script
+    menu:
+  File "renpy/common/00director.rpy", line 1817, in execute
+    screen director():
+  File "renpy/common/00director.rpy", line 1817, in execute
+    screen director():
+  File "renpy/common/00director.rpy", line 1825, in execute
+    frame:
+  File "renpy/common/00director.rpy", line 1834, in execute
+    has fixed:
+  File "renpy/common/00director.rpy", line 1837, in execute
+    if state.mode == "lines":
+  File "renpy/common/00director.rpy", line 1842, in execute
+    use director_tag(state)
+  File "renpy/common/00director.rpy", line 1688, in execute
+    screen director_tag(state):
+  File "renpy/common/00director.rpy", line 1688, in execute
+    screen director_tag(state):
+  File "renpy/common/00director.rpy", line 1690, in execute
+    vbox:
+  File "renpy/common/00director.rpy", line 1695, in execute
+    use director_choices(_("Tag:")):
+  File "renpy/common/00director.rpy", line 1645, in execute
+    screen director_choices(title):
+  File "renpy/common/00director.rpy", line 1645, in execute
+    screen director_choices(title):
+  File "renpy/common/00director.rpy", line 1649, in execute
+    frame:
+  File "renpy/common/00director.rpy", line 1653, in execute
+    viewport:
+  File "renpy/common/00director.rpy", line 1660, in execute
+    hbox:
+  File "renpy/common/00director.rpy", line 1664, in execute
+    transclude
+  File "renpy/common/00director.rpy", line 1695, in execute
+    use director_choices(_("Tag:")):
+  File "renpy/common/00director.rpy", line 1697, in execute
+    for t in director.get_tags():
+  File "renpy/common/00director.rpy", line 1697, in <module>
+    for t in director.get_tags():
+  File "renpy/common/00director.rpy", line 627, in get_tags
+    rv.sort(key=component_key)
+TypeError: '<' not supported between instances of 'str' and 'int'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 327, in script
-    if $ time == 0:
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
-    if renpy.python.py_eval(condition):
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
-    code = py_compile(code, 'eval')
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
-    raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
-    raise orig_e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (script.rpy, line 327)
+  File "game/script.rpy", line 359, in script
+    menu:
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1903, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1010, in menu
+    rv = renpy.store.menu(new_items)
+  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1250, in display_menu
+    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 451, in visit_all
+    callback(self)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 462, in per_interact
+    self.update()
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "renpy/common/00director.rpy", line 1817, in execute
+    screen director():
+  File "renpy/common/00director.rpy", line 1817, in execute
+    screen director():
+  File "renpy/common/00director.rpy", line 1825, in execute
+    frame:
+  File "renpy/common/00director.rpy", line 1834, in execute
+    has fixed:
+  File "renpy/common/00director.rpy", line 1837, in execute
+    if state.mode == "lines":
+  File "renpy/common/00director.rpy", line 1842, in execute
+    use director_tag(state)
+  File "renpy/common/00director.rpy", line 1688, in execute
+    screen director_tag(state):
+  File "renpy/common/00director.rpy", line 1688, in execute
+    screen director_tag(state):
+  File "renpy/common/00director.rpy", line 1690, in execute
+    vbox:
+  File "renpy/common/00director.rpy", line 1695, in execute
+    use director_choices(_("Tag:")):
+  File "renpy/common/00director.rpy", line 1645, in execute
+    screen director_choices(title):
+  File "renpy/common/00director.rpy", line 1645, in execute
+    screen director_choices(title):
+  File "renpy/common/00director.rpy", line 1649, in execute
+    frame:
+  File "renpy/common/00director.rpy", line 1653, in execute
+    viewport:
+  File "renpy/common/00director.rpy", line 1660, in execute
+    hbox:
+  File "renpy/common/00director.rpy", line 1664, in execute
+    transclude
+  File "renpy/common/00director.rpy", line 1695, in execute
+    use director_choices(_("Tag:")):
+  File "renpy/common/00director.rpy", line 1697, in execute
+    for t in director.get_tags():
+  File "renpy/common/00director.rpy", line 1697, in <module>
+    for t in director.get_tags():
+  File "renpy/common/00director.rpy", line 627, in get_tags
+    rv.sort(key=component_key)
+  File "/Applications/renpy-8.0.1-sdk/renpy/revertable.py", line 97, in do_mutation
+    return method(self, *args, **kwargs)
+TypeError: '<' not supported between instances of 'str' and 'int'
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Sat Aug  6 20:52:03 2022
+Sun Aug  7 22:55:58 2022

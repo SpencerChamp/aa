@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 330: Line is indented, but the preceding show screen statement statement does not expect a block. Please check this line's indentation.
-    matrixcolor TintMatrix("#2d2d94")*ContrastMatrix(1.48)BrightnessMatrix(0.3)
+File "game/script.rpy", line 362: expected menuitem
+    pause 
     ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Sat Aug  6 20:35:06 2022
+Sun Aug  7 22:48:23 2022

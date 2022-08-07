@@ -10,8 +10,18 @@ define lup = Character("Lupa")
 
 ### Screens / Image Buttons (ill move into screens.rpy laterrrrrr) ###
 
-screen day_dis:
-    text "{b}[weekday]{/b}" ypos .90 xpos .05
+screen gui:
+    frame:
+        xpos 80 # offset on the x axis
+        ypos 950 # offset on the y axis
+        xsize 200 # Width of your frame
+        ysize 120 # Height of your frame
+        #background "my_image.png" #Assuming it is located in the images folder.
+        vbox:
+            align(0.5, 0.5)
+            text "{b}[weekday]{/b}"
+            text "{b}DEN: [money]{/b}"
+            #textbutton "Return" action Hide("my_black_box") # Hides the box you've created, but this part may vary on how you handle screens.
 
 screen cubi_nav():
     imagebutton auto "door_%s":
@@ -46,6 +56,16 @@ screen sn1_nav():
         focus_mask None
         action [Hide ("sn1_nav"), Jump ("insula_ext")]
         tooltip "Back home"
+    imagebutton auto "thermasign_%s":
+        xpos 498
+        ypos 648
+        focus_mask True
+        action [Hide ("sn1_nav"), Jump ("therma_ext")]
+
+screen therma_ext_nav():
+    imagebutton auto "therma_entrance_%s":
+        focus_mask True
+        action [Hide ("therma_ext_nav"), Jump ("therma_int")]
 
 screen forum_nav():
     imagebutton auto "larrow_%s":
@@ -105,7 +125,6 @@ label day_change:
         $ weekday_number += 1
         $ totalday += 1
         $ time = 0
-
     if weekday_number == 1:
         $ weekday = "SOL"
     elif weekday_number == 2:
@@ -130,7 +149,7 @@ default weekday_number = 1
 default weekday = "SOL"
 default totalday = 0
 default time = 0
-default money = 3
+default money = 15
 
 ### More Efficient Day System? (guy was mean so i gave up) ###
     #default weekday = 0
@@ -159,7 +178,7 @@ label start:
 
     scene bg baby with fade
 
-    "Lupa, the matron, brought me in. I wascarrying only an amulet, inscribed with my name..."
+    "Lupa, the matron, brought me in. I had only an amulet, inscribed with my name..."
 
     python:
         pname = renpy.input("Name?", length=32)
@@ -183,7 +202,7 @@ label start:
 label cubi_wake:
     scene bg cubi int with fade
     show screen cubi_nav
-    show screen day_dis
+    show screen gui
     call day_change()
 
     show p basic with dissolve
@@ -205,7 +224,7 @@ label cubi_wake:
    
     else:
         p "{i}yawn{/i}"
-        p "Another day another denari..."
+        p "Another day another denarius..."
 
         hide p basic
 
@@ -241,6 +260,17 @@ label street_n1:
     show screen sn1_nav
 
     $ renpy.pause(hard=True)
+
+label therma_ext:
+    scene bg therma ext
+    show screen therma
+   
+    $ renpy.pause(hard=True)
+
+label therma_int:
+    if time > 4:
+        scene bg therma int
+
 
 label forum:
     scene bg forum
@@ -329,9 +359,7 @@ label port:
         if time == 0:
                 show screen port_g
         
-
     $ renpy.pause(hard=True)
-
 
 label port_work:
     scene bg port with fade
@@ -351,10 +379,17 @@ label port_work:
 
             $ time += 1
 
+            
+            scene bg port
+            
             show g basic at right 
             show p basic at left
 
             g "Alright, decent work today. Enjoy your evening."
+            
+            $ money += 25
+
+            show p happy with dissolve
 
             jump port
 
