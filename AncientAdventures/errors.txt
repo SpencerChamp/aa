@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 362: expected menuitem
-    pause 
+File "game/script.rpy", line 29: Line is indented, but the preceding ypos statement does not expect a block. Please check this line's indentation.
+    imagebutton idle "arrow":
     ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Sun Aug  7 22:48:23 2022
+Mon Aug  8 11:18:02 2022

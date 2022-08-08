@@ -1,112 +1,223 @@
-Sun Aug  7 22:44:23 2022
+Mon Aug  8 11:24:01 2022
 macOS-10.16-x86_64-i386-64bit
 Ren'Py 8.0.1.22070801
  
 
-Bootstrap to the start of init.init took 0.24s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
-Loader init took 0.05s
-Loading error handling took 0.09s
-Loading script took 0.47s
-Loading save slot metadata. took 0.04s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 362: expected menuitem
-    pause 
-    ^
-DPI scale factor: 1.000000
-Interface start took 0.66s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 237.85s
-Early init took 0.00s
-Loader init took 0.04s
-Loading error handling took 0.05s
-Loading script took 0.27s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 362: expected menuitem
-    pause 
-    ^
-DPI scale factor: 1.000000
-Interface start took 0.13s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 240.45s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.04s
-Loading script took 0.20s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 362: expected menuitem
-    pause 
-    ^
-DPI scale factor: 1.000000
-Interface start took 0.28s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 244.37s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.10s
-Loading script took 0.28s
+Loader init took 0.01s
+Loading error handling took 0.03s
+Loading script took 0.35s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.10s
-Loading analysis data took 0.05s
-Analyze and compile ATL took 0.01s
+Running init code took 0.09s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.11s
+Dump and make backups. took 0.08s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.04s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.07s
-Build styles took 0.01s
+Init translation took 0.06s
+Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.03s
-Save screen analysis took 0.05s
-Prepare screens took 0.17s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.04s
 Running _start took 0.00s
+Performance test:
+Interface start took 0.34s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 315, in script
+    jump therma_ext
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1974, in execute
+    rv = renpy.game.script.lookup(target)
+  File "/Applications/renpy-8.0.1-sdk/renpy/script.py", line 927, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'therma_ext'.
+
+While running game code:
+  File "game/script.rpy", line 315, in script
+    jump therma_ext
+ScriptError: could not find label 'therma_ext'.
+Resetting cache.
+Bootstrap to the start of init.init took 159.46s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.04s
+Loading script took 0.26s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 180.94s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.03s
+Loading script took 0.19s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.08s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 197.87s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.15s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1040.44s
+Early init took 0.00s
+Loader init took 0.03s
+Loading error handling took 0.04s
+Loading script took 0.32s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.08s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.13s
+Save pyanalysis. took 0.04s
+Save bytecode. took 0.03s
+Running _start took 0.06s
 Performance test:
 Interface start took 0.11s
 
@@ -120,36 +231,120 @@ Version: b'2.1 INTEL-16.0.49'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
-Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 678.10s
+Bootstrap to the start of init.init took 1073.96s
 Early init took 0.00s
-Loader init took 0.03s
-Loading error handling took 0.04s
-Loading script took 0.23s
+Loader init took 0.01s
+Loading error handling took 0.03s
+Loading script took 0.26s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.13s
-Loading analysis data took 0.03s
+Running init code took 0.06s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.08s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.08s
+Initial gc. took 0.05s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.07s
+Init translation took 0.05s
 Build styles took 0.00s
-Load screen analysis took 0.05s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 3248.06s
+Early init took 0.00s
+Loader init took 0.04s
+Loading error handling took 0.05s
+Loading script took 0.21s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.08s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.11s
+Cleaning cache took 0.00s
+Making clean stores took 0.01s
+Initial gc. took 0.10s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.01s
+Load screen analysis took 0.07s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.11s
+Prepare screens took 0.22s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.12s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 7638.48s
+Early init took 0.00s
+Loader init took 0.04s
+Loading error handling took 0.04s
+Loading script took 0.30s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.09s
+Loading analysis data took 0.05s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.12s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.10s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.07s
+Save screen analysis took 0.04s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.10s
@@ -162,447 +357,5 @@ Vendor: "b'Intel Inc.'"
 Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
 Version: b'2.1 INTEL-16.0.49'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 375, in script
-    g "Alright, decent work today. Enjoy your evening."
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 1266, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 927, in do_display
-    display_say(who,
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 666, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 4252, in interact_core
-    rv = root_widget.event(ev, x, y, 0)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1175, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1175, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1175, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 743, in event
-    rv = self.child.event(ev, x, y, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1175, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "renpy/common/00director.rpy", line 1308, in event
-    rv = self.child.event(ev, x, y, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1399, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 279, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1175, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1175, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1399, in event
-    rv = super(Window, self).event(ev, x, y, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 279, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 279, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/viewport.py", line 298, in event
-    rv = super(Viewport, self).event(ev, x, y, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 279, in event
-    rv = d.event(ev, x - xo, y - yo, st)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1175, in event
-    rv = i.event(ev, x - xo, y - yo, cst)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/behavior.py", line 1064, in event
-    return handle_click(self.clicked)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/behavior.py", line 999, in handle_click
-    rv = run(action)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/behavior.py", line 329, in run
-    return action(*args, **kwargs)
-  File "renpy/common/00director.rpy", line 1012, in __call__
-    pick_tag()
-  File "renpy/common/00director.rpy", line 478, in pick_tag
-    tags = get_tags()
-  File "renpy/common/00director.rpy", line 627, in get_tags
-    rv.sort(key=component_key)
-  File "/Applications/renpy-8.0.1-sdk/renpy/revertable.py", line 97, in do_mutation
-    return method(self, *args, **kwargs)
-TypeError: '<' not supported between instances of 'str' and 'int'
-
-While running game code:
-  File "game/script.rpy", line 375, in script
-    g "Alright, decent work today. Enjoy your evening."
-  File "renpy/common/00director.rpy", line 1308, in event
-    rv = self.child.event(ev, x, y, st)
-  File "renpy/common/00director.rpy", line 1012, in __call__
-    pick_tag()
-  File "renpy/common/00director.rpy", line 478, in pick_tag
-    tags = get_tags()
-  File "renpy/common/00director.rpy", line 627, in get_tags
-    rv.sort(key=component_key)
-TypeError: '<' not supported between instances of 'str' and 'int'
-
-Full traceback:
-  File "game/script.rpy", line 367, in script
-    "Work was tiring. The shipments seemed to never stop coming."
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 1266, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 927, in do_display
-    display_say(who,
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 666, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 451, in visit_all
-    callback(self)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 462, in per_interact
-    self.update()
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1825, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1834, in execute
-    has fixed:
-  File "renpy/common/00director.rpy", line 1837, in execute
-    if state.mode == "lines":
-  File "renpy/common/00director.rpy", line 1842, in execute
-    use director_tag(state)
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1690, in execute
-    vbox:
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1649, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1653, in execute
-    viewport:
-  File "renpy/common/00director.rpy", line 1660, in execute
-    hbox:
-  File "renpy/common/00director.rpy", line 1664, in execute
-    transclude
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1697, in execute
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 1697, in <module>
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 627, in get_tags
-    rv.sort(key=component_key)
-  File "/Applications/renpy-8.0.1-sdk/renpy/revertable.py", line 97, in do_mutation
-    return method(self, *args, **kwargs)
-TypeError: '<' not supported between instances of 'str' and 'int'
-
-While running game code:
-  File "game/script.rpy", line 367, in script
-    "Work was tiring. The shipments seemed to never stop coming."
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1825, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1834, in execute
-    has fixed:
-  File "renpy/common/00director.rpy", line 1837, in execute
-    if state.mode == "lines":
-  File "renpy/common/00director.rpy", line 1842, in execute
-    use director_tag(state)
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1690, in execute
-    vbox:
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1649, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1653, in execute
-    viewport:
-  File "renpy/common/00director.rpy", line 1660, in execute
-    hbox:
-  File "renpy/common/00director.rpy", line 1664, in execute
-    transclude
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1697, in execute
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 1697, in <module>
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 627, in get_tags
-    rv.sort(key=component_key)
-TypeError: '<' not supported between instances of 'str' and 'int'
-
-Full traceback:
-  File "game/script.rpy", line 363, in script
-    g "Good. Let's get started."
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 1266, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 927, in do_display
-    display_say(who,
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 666, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 451, in visit_all
-    callback(self)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 462, in per_interact
-    self.update()
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1825, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1834, in execute
-    has fixed:
-  File "renpy/common/00director.rpy", line 1837, in execute
-    if state.mode == "lines":
-  File "renpy/common/00director.rpy", line 1842, in execute
-    use director_tag(state)
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1690, in execute
-    vbox:
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1649, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1653, in execute
-    viewport:
-  File "renpy/common/00director.rpy", line 1660, in execute
-    hbox:
-  File "renpy/common/00director.rpy", line 1664, in execute
-    transclude
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1697, in execute
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 1697, in <module>
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 627, in get_tags
-    rv.sort(key=component_key)
-  File "/Applications/renpy-8.0.1-sdk/renpy/revertable.py", line 97, in do_mutation
-    return method(self, *args, **kwargs)
-TypeError: '<' not supported between instances of 'str' and 'int'
-
-While running game code:
-  File "game/script.rpy", line 363, in script
-    g "Good. Let's get started."
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1825, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1834, in execute
-    has fixed:
-  File "renpy/common/00director.rpy", line 1837, in execute
-    if state.mode == "lines":
-  File "renpy/common/00director.rpy", line 1842, in execute
-    use director_tag(state)
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1690, in execute
-    vbox:
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1649, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1653, in execute
-    viewport:
-  File "renpy/common/00director.rpy", line 1660, in execute
-    hbox:
-  File "renpy/common/00director.rpy", line 1664, in execute
-    transclude
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1697, in execute
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 1697, in <module>
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 627, in get_tags
-    rv.sort(key=component_key)
-TypeError: '<' not supported between instances of 'str' and 'int'
-
-Full traceback:
-  File "game/script.rpy", line 359, in script
-    menu:
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1903, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1010, in menu
-    rv = renpy.store.menu(new_items)
-  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1250, in display_menu
-    rv = renpy.ui.interact(mouse='menu', type=type, roll_forward=roll_forward)
-  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 451, in visit_all
-    callback(self)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 462, in per_interact
-    self.update()
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1825, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1834, in execute
-    has fixed:
-  File "renpy/common/00director.rpy", line 1837, in execute
-    if state.mode == "lines":
-  File "renpy/common/00director.rpy", line 1842, in execute
-    use director_tag(state)
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1690, in execute
-    vbox:
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1649, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1653, in execute
-    viewport:
-  File "renpy/common/00director.rpy", line 1660, in execute
-    hbox:
-  File "renpy/common/00director.rpy", line 1664, in execute
-    transclude
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1697, in execute
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 1697, in <module>
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 627, in get_tags
-    rv.sort(key=component_key)
-  File "/Applications/renpy-8.0.1-sdk/renpy/revertable.py", line 97, in do_mutation
-    return method(self, *args, **kwargs)
-TypeError: '<' not supported between instances of 'str' and 'int'
-
-While running game code:
-  File "game/script.rpy", line 359, in script
-    menu:
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1817, in execute
-    screen director():
-  File "renpy/common/00director.rpy", line 1825, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1834, in execute
-    has fixed:
-  File "renpy/common/00director.rpy", line 1837, in execute
-    if state.mode == "lines":
-  File "renpy/common/00director.rpy", line 1842, in execute
-    use director_tag(state)
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1688, in execute
-    screen director_tag(state):
-  File "renpy/common/00director.rpy", line 1690, in execute
-    vbox:
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1645, in execute
-    screen director_choices(title):
-  File "renpy/common/00director.rpy", line 1649, in execute
-    frame:
-  File "renpy/common/00director.rpy", line 1653, in execute
-    viewport:
-  File "renpy/common/00director.rpy", line 1660, in execute
-    hbox:
-  File "renpy/common/00director.rpy", line 1664, in execute
-    transclude
-  File "renpy/common/00director.rpy", line 1695, in execute
-    use director_choices(_("Tag:")):
-  File "renpy/common/00director.rpy", line 1697, in execute
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 1697, in <module>
-    for t in director.get_tags():
-  File "renpy/common/00director.rpy", line 627, in get_tags
-    rv.sort(key=component_key)
-TypeError: '<' not supported between instances of 'str' and 'int'

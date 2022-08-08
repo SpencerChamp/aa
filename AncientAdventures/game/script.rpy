@@ -7,6 +7,8 @@ define v = Character("Venus", color="FF0082")
 define c = Character("Cupid", color="FF93CA")
 define g = Character("Gurges", color="4F4F4F")
 define lup = Character("Lupa")
+define a = Character("Attendant")
+define s = Character("Slave")
 
 ### Screens / Image Buttons (ill move into screens.rpy laterrrrrr) ###
 
@@ -31,6 +33,8 @@ screen cubi_nav():
         action [Hide ("cubi_nav"), Jump ("insula_ext")]
     imagebutton auto "bed_%s":
         focus_mask True
+        if totalday == 1 and time == 0:
+            action [Jump ("cant_sleep")]
         action [Jump ("cubi_wake")]
 
 screen ins_nav():
@@ -60,7 +64,14 @@ screen sn1_nav():
         xpos 498
         ypos 648
         focus_mask True
-        action [Hide ("sn1_nav"), Jump ("therma_ext")]
+        action [Hide ("sn1_nav"), Jump ("therma_int")]
+
+screen therma_int_nav():
+    imagebutton auto "larrow_%s":
+        xpos 20
+        ypos 400
+        focus_mask None
+        action [Hide ("therma_int_nav"), Jump ("street_n1")]
 
 screen therma_ext_nav():
     imagebutton auto "therma_entrance_%s":
@@ -117,14 +128,14 @@ screen port_g():
         action [Hide ("port_g"), Jump ("port_work")]
 
 label day_change:
+    $ time = 0
+    $ therma = 0
     if weekday_number == 7:
         $ weekday_number = 1
         $ totalday += 1
-        $ time = 0
     else:
         $ weekday_number += 1
         $ totalday += 1
-        $ time = 0
     if weekday_number == 1:
         $ weekday = "SOL"
     elif weekday_number == 2:
@@ -150,6 +161,7 @@ default weekday = "SOL"
 default totalday = 0
 default time = 0
 default money = 15
+default therma = 0
 
 ### More Efficient Day System? (guy was mean so i gave up) ###
     #default weekday = 0
@@ -230,6 +242,11 @@ label cubi_wake:
 
     $ renpy.pause(hard=True)
 
+label cant_sleep:
+    show p shocked
+    p "I can't go back to sleep! I need to pay rent!"
+    jump cubi
+
 label cubi:
     scene bg cubi int
     show screen cubi_nav
@@ -261,16 +278,62 @@ label street_n1:
 
     $ renpy.pause(hard=True)
 
-label therma_ext:
-    scene bg therma ext
-    show screen therma
+# label therma_ext:
+#     scene bg therma ext
+#     show screen therma_ext_nav
    
-    $ renpy.pause(hard=True)
+#     $ renpy.pause(hard=True)
 
 label therma_int:
+    show screen therma_int_nav
     if time > 4:
-        scene bg therma int
+        scene bg therma int night
 
+        $ renpy.pause(hard=True)
+    else:
+        if therma < 1:
+            scene bg therma int
+
+            show a basic at right with dissolve
+            show p basic at left with dissolve
+
+            a "Welcome to the Baths of Luna."
+            menu baths:
+                "What is this place?":
+                    a "Our baths are famous across the Empire for rejuvenating the body, mind, and soul."
+                    a "Please feel free to enjoy our various pools, gym, and library."
+                    
+                    jump baths
+                "Pay to Enter":
+                    a "That will be 2 denarii, please."
+                    
+                    $ money -= 2
+
+                    p "Here you go."
+                    a "Thank you! Enjoy the baths."
+                    
+                    hide a basic with dissolve
+                    hide p basic with dissolve
+
+                    $ therma += 1
+
+                    jump therma_int
+                "Leave":
+                    show a annoyed at right
+
+                    jump therma_ext
+        else:
+            $ renpy.pause(hard=True)
+
+
+
+
+
+        
+        
+
+
+    $ renpy.pause(hard=True)
 
 label forum:
     scene bg forum
@@ -364,12 +427,12 @@ label port:
 label port_work:
     scene bg port with fade
     
-    show p basic at left
-    show g basic at right
+    show p basic at left with dissolve
+    show g basic at right with dissolve
+
+    g "Well, at least you made it on time today."
 
     menu:
-        g "Well, at least you made it on time today."
-
         "Work":
             g "Good. Let's get started."
 
@@ -397,6 +460,29 @@ label port_work:
 
 label schola:
     scene bg schola
+    show screen schola_nav
+    
+    show p basic at left
+
+    p "Hm, this place doesn't seem so dirty."
+
+    show s basic at right with dissolve
+    
+    s "That's because we've already cleaned most of it, sleepy head."
+
+    p "Ah..."
+
+    s "Don't worry, we left you the old garden to take care of."
+
+    p "Very thoughtful of you."
+
+    s "Better hurry up, the boss usually does inspections before lunch."
+
+    p "Copy that."
+
+    hide s basic 
+
+    hide p basic
 
     $ renpy.pause(hard=True)
 
