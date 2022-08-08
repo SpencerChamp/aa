@@ -8,9 +8,10 @@ define c = Character("Cupid", color="FF93CA")
 define g = Character("Gurges", color="4F4F4F")
 define lup = Character("Lupa")
 define a = Character("Attendant")
-define s = Character("Slave")
+define f = Character("Felix")
+define b = Character("Bishop")
 
-### Screens / Image Buttons (ill move into screens.rpy laterrrrrr) ###
+### Screens / Image Buttons  (ill move into screens.rpy laterrrrrr) ###
 
 screen gui:
     frame:
@@ -119,6 +120,13 @@ screen port_nav():
         focus_mask None
         action [Hide ("port_nav"), Jump ("schola")]
         tooltip "To the merchant schola"
+
+screen schola_nav():
+    imagebutton auto "larrow_%s":
+        xpos 20
+        ypos 400
+        focus_mask None
+        action [Hide ("schola_nav"), Jump ("port")]
 
 screen port_g():
     imagebutton idle "g basic.png":
@@ -256,7 +264,7 @@ label cubi:
 label insula_ext:
     scene bg insula
 
-    if totalday == 1:
+    if totalday == 1 and time == 0:
         show p basic with dissolve
 
         p "The port is directly South, past the Forum."
@@ -339,11 +347,41 @@ label forum:
     scene bg forum
     show screen forum_nav
 
-    if totalday == 1:
-        show p basic with dissolve
+    if totalday == 1 and time == 0:
+        show p happy at right with dissolve
 
-        p "The forum. The lively beating heart of any Roman city."
-        p "No time to enjoy it this morning."
+        p "Ah, the forum. Bustling as usual."
+
+        "Exile them!"
+        
+        show p basic at right:
+            xzoom -1
+
+        p "Maybe a bit more than usual..."
+
+        hide p basic with dissolve
+
+        scene bg forum crowd
+        show b basic 
+        with dissolve
+
+        b "We must be lenient, brothers and sister."
+        b "For our archaic, earthly laws do not allow us to dispense justice as our Lord, the Most High God wills."
+        b "Yet."
+        b "We must, regretfully, allow sinners and adulterers to remain in our community."
+        
+        "Boo!" 
+        "Banish the wicked!"
+
+        b "But with only a small donation to the Church, we can strengthen our resolve and..."
+
+        hide b basic
+        show bg forum
+        with dissolve
+
+        show p basic
+
+        p "Yikes."
 
         hide p basic with dissolve
 
@@ -352,6 +390,7 @@ label forum:
 label street_s1:
     scene bg street s1
     show screen ss1_nav
+    yes
 
     $ renpy.pause(hard=True)
 
@@ -462,28 +501,47 @@ label schola:
     scene bg schola
     show screen schola_nav
     
-    show p basic at left
+    if totalday == 1:
+        show p basic at left
 
-    p "Hm, this place doesn't seem so dirty."
+        p "Hm, this place doesn't seem so dirty."
 
-    show s basic at right with dissolve
-    
-    s "That's because we've already cleaned most of it, sleepy head."
+        show f basic at right with dissolve
+        
+        f "That's because we've already cleaned most of it, sleepy head."
 
-    p "Ah..."
+        p "Ah..."
 
-    s "Don't worry, we left you the old garden to take care of."
+        f "Don't worry, we left you the old garden to take care of."
 
-    p "Very thoughtful of you."
+        p "Very thoughtful of you."
 
-    s "Better hurry up, the boss usually does inspections before lunch."
+        f "Better hurry up, the boss usually does inspections before lunch."
 
-    p "Copy that."
+        p "Copy that."
 
-    hide s basic 
+        hide f basic with dissolve
 
-    hide p basic
+        hide p basic with dissolve
 
     $ renpy.pause(hard=True)
+
+label schola_garden:
+    scene bg schola garden
+    show screen schola_garden_nav
+    if totalday == 1:
+        show p basic at right with dissolve:
+            xzoom -1
+        p "Such a quiet and peaceful spot. Despite being so close to the port."
+        p "I wonder why it hasn't been maintained."
+        show p basic at right:
+            xzoom 1
+        p "Well, I should probably clean like my job depends on it."
+        hide p basic with dissolve
+
+    $ renpy.pause(hard=True)
+
+label pedestal:
+    scene bg pedestal
 
     return

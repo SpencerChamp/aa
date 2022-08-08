@@ -1,22 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 315, in script
-    jump therma_ext
-ScriptError: could not find label 'therma_ext'.
+  File "game/script.rpy", line 494, in script
+    show screen schola_nav
+  File "renpy/common/000statements.rpy", line 588, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+Exception: Screen schola_nav is not known.
+
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 315, in script
-    jump therma_ext
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1974, in execute
-    rv = renpy.game.script.lookup(target)
-  File "/Applications/renpy-8.0.1-sdk/renpy/script.py", line 927, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'therma_ext'.
+  File "game/script.rpy", line 494, in script
+    show screen schola_nav
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2232, in execute
+    self.call("execute")
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 588, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 1185, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen schola_nav is not known.
+
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Mon Aug  8 11:25:16 2022
+Mon Aug  8 20:34:20 2022
