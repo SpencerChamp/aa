@@ -27,7 +27,7 @@ screen gui:
             #textbutton "Return" action Hide("my_black_box") # Hides the box you've created, but this part may vary on how you handle screens.
 
 screen cubi_nav():
-    imagebutton auto "door_%s":
+    imagebutton auto "door_%s": #ignore the magic door
         xpos 1520
         ypos 180
         focus_mask True
@@ -127,6 +127,21 @@ screen schola_nav():
         ypos 400
         focus_mask None
         action [Hide ("schola_nav"), Jump ("port")]
+    imagebutton auto "garden_ent_%s":
+        focus_mask True
+        action [Hide ("schola_nav"), Jump ("schola_garden")]
+
+screen schola_garden_nav():
+    imagebutton auto "larrow_%s":
+        xpos 20
+        ypos 400
+        focus_mask None
+        action [Hide ("schola_garden_nav"), Jump ("schola")]
+    imagebutton idle "pr statue basic":
+        xpos .5
+        ypos 300
+        focus_mask True
+        action [Hide ("schola_garden_nav"), Jump ("peda")]
 
 screen port_g():
     imagebutton idle "g basic.png":
@@ -168,6 +183,7 @@ default weekday_number = 1
 default weekday = "SOL"
 default totalday = 0
 default time = 0
+    # 0 - 12, Roman hour system. 1-6 for work, 7-8 for bathing/excersie/recreation, 9 - 12 for dinner. 
 default money = 15
 default therma = 0
 
@@ -221,7 +237,6 @@ label start:
 
 label cubi_wake:
     scene bg cubi int with fade
-    show screen cubi_nav
     show screen gui
     call day_change()
 
@@ -248,7 +263,7 @@ label cubi_wake:
 
         hide p basic
 
-    $ renpy.pause(hard=True)
+    call screen cubi_nav
 
 label cant_sleep:
     show p shocked
@@ -257,9 +272,8 @@ label cant_sleep:
 
 label cubi:
     scene bg cubi int
-    show screen cubi_nav
-
-    $ renpy.pause(hard=True)
+    
+    call screen cubi_nav
 
 label insula_ext:
     scene bg insula
@@ -276,9 +290,7 @@ label insula_ext:
 
         hide p basic with dissolve
 
-    show screen ins_nav
-
-    $ renpy.pause(hard=True)
+    call screen ins_nav
 
 label street_n1:
     scene bg street n1
@@ -293,8 +305,8 @@ label street_n1:
 #     $ renpy.pause(hard=True)
 
 label therma_int:
-    show screen therma_int_nav
-    if time > 4:
+
+    if time > 10:
         scene bg therma int night
 
         $ renpy.pause(hard=True)
@@ -329,23 +341,14 @@ label therma_int:
                 "Leave":
                     show a annoyed at right
 
-                    jump therma_ext
-        else:
+                    jump street_n1 #change to therma_ext when done
+        else: #bath times coming soon
             $ renpy.pause(hard=True)
 
-
-
-
-
-        
-        
-
-
-    $ renpy.pause(hard=True)
+    call screen therma_int_nav
 
 label forum:
     scene bg forum
-    show screen forum_nav
 
     if totalday == 1 and time == 0:
         show p happy at right with dissolve
@@ -368,10 +371,10 @@ label forum:
         b "We must be lenient, brothers and sister."
         b "For our archaic, earthly laws do not allow us to dispense justice as our Lord, the Most High God wills."
         b "Yet."
-        b "We must, regretfully, allow sinners and adulterers to remain in our community."
+        b "We must, regretfully, continue to toil in this age of sin."
         
         "Boo!" 
-        "Banish the wicked!"
+        "Out with the wicked!"
 
         b "But with only a small donation to the Church, we can strengthen our resolve and..."
 
@@ -385,18 +388,14 @@ label forum:
 
         hide p basic with dissolve
 
-    $ renpy.pause(hard=True)
+    call screen forum_nav
 
 label street_s1:
     scene bg street s1
-    show screen ss1_nav
-    yes
-
-    $ renpy.pause(hard=True)
+    call screen ss1_nav
 
 label port:
     scene bg port
-    show screen port_nav
 
     if totalday == 1:
         show p basic at left with dissolve:
@@ -451,17 +450,15 @@ label port:
 
         p "Well, at least I still have a job."
 
-        pause
-
         p "I should head to the schola."
 
         hide p basic with dissolve
    
     else:
-        if time == 0:
-                show screen port_g
+        if time < 6:
+                call screen port_g
         
-    $ renpy.pause(hard=True)
+    call screen port_nav
 
 label port_work:
     scene bg port with fade
@@ -473,14 +470,13 @@ label port_work:
 
     menu:
         "Work":
-            g "Good. Let's get started."
+            g "Good. Let's get started. First..."
 
             scene work with fade 
 
             "Work was tiring. The shipments seemed to never stop coming."
 
-            $ time += 1
-
+            $ time = 6
             
             scene bg port
             
@@ -499,15 +495,16 @@ label port_work:
 
 label schola:
     scene bg schola
-    show screen schola_nav
     
-    if totalday == 1:
-        show p basic at left
+    if totalday == 1 and time == 0:
+        show f basic at right:
+            xzoom -1
+        show p basic at left with dissolve
 
         p "Hm, this place doesn't seem so dirty."
 
-        show f basic at right with dissolve
-        
+        show f basic at right:
+            xzoom 1
         f "That's because we've already cleaned most of it, sleepy head."
 
         p "Ah..."
@@ -524,12 +521,11 @@ label schola:
 
         hide p basic with dissolve
 
-    $ renpy.pause(hard=True)
+    call screen schola_nav
 
 label schola_garden:
     scene bg schola garden
-    show screen schola_garden_nav
-    if totalday == 1:
+    if totalday == 1 and time == 0:
         show p basic at right with dissolve:
             xzoom -1
         p "Such a quiet and peaceful spot. Despite being so close to the port."
@@ -538,8 +534,9 @@ label schola_garden:
             xzoom 1
         p "Well, I should probably clean like my job depends on it."
         hide p basic with dissolve
+        
 
-    $ renpy.pause(hard=True)
+    call screen schola_garden_nav
 
 label pedestal:
     scene bg pedestal
