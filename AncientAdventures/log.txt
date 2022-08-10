@@ -1,39 +1,64 @@
-Wed Aug 10 13:08:48 2022
+Wed Aug 10 19:03:48 2022
 macOS-10.16-x86_64-i386-64bit
 Ren'Py 8.0.1.22070801
  
 
-Bootstrap to the start of init.init took 0.09s
-Early init took 0.02s
-Loader init took 0.02s
+Bootstrap to the start of init.init took 0.07s
+Early init took 0.01s
+Loader init took 0.05s
 Loading error handling took 0.05s
-Loading script took 0.55s
-Loading save slot metadata. took 0.03s
+Loading script took 0.48s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 455: expected 'simple_expression' not found.
+    show p basic at left with with dissolve
+                              ^
+DPI scale factor: 1.000000
+Interface start took 0.45s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 33.25s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.22s
+Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.09s
-Loading analysis data took 0.05s
+Running init code took 0.08s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.07s
+Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.03s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.08s
+Init translation took 0.05s
 Build styles took 0.00s
 Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.06s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.05s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.37s
+Interface start took 0.08s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -47,171 +72,66 @@ Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
 Maximum texture size: 4096x4096
 
 Full traceback:
-  File "game/script.rpy", line 245, in script
-    p "A dignified career and a new apartment..."
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 921, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1373, in say
-    who(what, *args, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 1266, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 927, in do_display
-    display_say(who,
-  File "/Applications/renpy-8.0.1-sdk/renpy/character.py", line 666, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3906, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 2602, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 495, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/transform.py", line 747, in render
-    return transform_render(self, width, height, st, at)
-  File "accelerator.pyx", line 187, in renpy.display.accelerator.transform_render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/image.py", line 505, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/image.py", line 308, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 627, in render
-    return cache.get(self, render=True)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 295, in get
-    surf = image.load()
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 723, in load
+  File "game/script.rpy", line 458, in script
+    if time = 0:
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
+    code = py_compile(code, 'eval')
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
     raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 688, in load
-    filelike = renpy.loader.load(self.filename)
-  File "/Applications/renpy-8.0.1-sdk/renpy/loader.py", line 820, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'images/p basic.png'.
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
+    raise orig_e
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (script.rpy, line 458)
 
-While loading <renpy.display.im.Image object ('images/p basic.png') at 0x7fa404fd0580>:
-  File "game/script.rpy", line 245, in script
-    p "A dignified career and a new apartment..."
-OSError: Couldn't find file 'images/p basic.png'.
+While running game code:
+  File "game/script.rpy", line 458, in script
+    if time = 0:
+SyntaxError: invalid syntax (script.rpy, line 458)
 
 Full traceback:
-  File "game/script.rpy", line 272, in script
-    show p basic with dissolve
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1658, in execute
-    renpy.exports.with_statement(trans, paired=paired)
-  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 1653, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 2798, in do_with
-    return self.interact(trans_pause=True,
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3906, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 2602, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 495, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/transition.py", line 377, in render
-    bottom = render(self.old_widget, width, height, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/transform.py", line 747, in render
-    return transform_render(self, width, height, st, at)
-  File "accelerator.pyx", line 187, in renpy.display.accelerator.transform_render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/image.py", line 505, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/image.py", line 308, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 627, in render
-    return cache.get(self, render=True)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 295, in get
-    surf = image.load()
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 723, in load
+  File "game/script.rpy", line 458, in script
+    if time = 0:
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
+    code = py_compile(code, 'eval')
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
     raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 688, in load
-    filelike = renpy.loader.load(self.filename)
-  File "/Applications/renpy-8.0.1-sdk/renpy/loader.py", line 820, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'images/bg insula.jpg'.
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
+    raise orig_e
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (script.rpy, line 458)
 
-While loading <renpy.display.im.Image object ('…images/bg insula.jpg') at 0x7fa404fc8730>:
-  File "game/script.rpy", line 272, in script
-    show p basic with dissolve
-OSError: Couldn't find file 'images/bg insula.jpg'.
-Resetting cache.
-Bootstrap to the start of init.init took 378.03s
-Early init took 0.00s
-Loader init took 0.03s
-Loading error handling took 0.06s
-Loading script took 0.31s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.06s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.07s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.10s
+While running game code:
+  File "game/script.rpy", line 458, in script
+    if time = 0:
+SyntaxError: invalid syntax (script.rpy, line 458)
 
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
+Full traceback:
+  File "game/script.rpy", line 458, in script
+    if time = 0:
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
+    code = py_compile(code, 'eval')
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
+    raise e
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
+    raise orig_e
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (script.rpy, line 458)
+
+While running game code:
+  File "game/script.rpy", line 458, in script
+    if time = 0:
+SyntaxError: invalid syntax (script.rpy, line 458)
 Resetting cache.
-Bootstrap to the start of init.init took 428.12s
+Bootstrap to the start of init.init took 251.49s
 Early init took 0.00s
 Loader init took 0.02s
 Loading error handling took 0.03s
@@ -224,382 +144,10 @@ Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.07s
+Dump and make backups. took 0.06s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.06s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.12s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 559.77s
-Early init took 0.00s
-Loader init took 0.03s
-Loading error handling took 0.03s
-Loading script took 0.33s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.05s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.10s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.09s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.13s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.08s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 627.92s
-Early init took 0.00s
-Loader init took 0.03s
-Loading error handling took 0.03s
-Loading script took 0.38s
-Loading save slot metadata. took 0.02s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 369: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    if [pname[0]][pname[1]] == "Bi"
-    ^
-DPI scale factor: 1.000000
-Interface start took 0.15s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 637.19s
-Early init took 0.00s
-Loader init took 0.04s
-Loading error handling took 0.07s
-Loading script took 0.39s
-Loading save slot metadata. took 0.02s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 368: end of line expected.
-    p "I'm [pname[0]][pname[1]]-":
-                                 ^
-DPI scale factor: 1.000000
-Interface start took 0.23s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 646.52s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.04s
-Loading script took 0.23s
-Loading save slot metadata. took 0.04s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 369: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    if [pname[0]][pname[1]] == "Bi":
-    ^
-DPI scale factor: 1.000000
-Interface start took 0.24s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 661.76s
-Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.02s
-Loading script took 0.28s
-Loading save slot metadata. took 0.04s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.10s
-Loading analysis data took 0.05s
-Analyze and compile ATL took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.12s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.09s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.08s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.02s
-Save screen analysis took 0.05s
-Prepare screens took 0.24s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.04s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.13s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]][pname[1]] == "Bi":
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
-    if renpy.python.py_eval(condition):
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1080, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1073, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 369, in <module>
-    if [pname[0]][pname[1]] == "Bi":
-  File "/Applications/renpy-8.0.1-sdk/renpy/revertable.py", line 217, in __getitem__
-    rv = list.__getitem__(self, index)
-TypeError: list indices must be integers or slices, not str
-
-While running game code:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]][pname[1]] == "Bi":
-  File "game/script.rpy", line 369, in <module>
-    if [pname[0]][pname[1]] == "Bi":
-TypeError: list indices must be integers or slices, not str
-Resetting cache.
-Bootstrap to the start of init.init took 682.11s
-Early init took 0.00s
-Loader init took 0.04s
-Loading error handling took 0.06s
-Loading script took 0.65s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.08s
-Loading analysis data took 0.05s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.15s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.14s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.10s
-Build styles took 0.01s
-Load screen analysis took 0.01s
-Analyze screens took 0.02s
-Save screen analysis took 0.06s
-Prepare screens took 0.22s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.12s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]][pname[1]] = "Bi":
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
-    if renpy.python.py_eval(condition):
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
-    code = py_compile(code, 'eval')
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
-    raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
-    raise orig_e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (script.rpy, line 369)
-
-While running game code:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]][pname[1]] = "Bi":
-SyntaxError: invalid syntax (script.rpy, line 369)
-
-Full traceback:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]][pname[1]] = "Bi":
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
-    if renpy.python.py_eval(condition):
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
-    code = py_compile(code, 'eval')
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
-    raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
-    raise orig_e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (script.rpy, line 369)
-
-While running game code:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]][pname[1]] = "Bi":
-SyntaxError: invalid syntax (script.rpy, line 369)
-Resetting cache.
-Bootstrap to the start of init.init took 717.36s
-Early init took 0.00s
-Loader init took 0.03s
-Loading error handling took 0.04s
-Loading script took 0.39s
-Loading save slot metadata. took 0.02s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.06s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.09s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.05s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.01s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.11s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.09s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]] = B and [pname[1]] = i:
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
-    if renpy.python.py_eval(condition):
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
-    code = py_compile(code, 'eval')
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
-    raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
-    raise orig_e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (script.rpy, line 369)
-
-While running game code:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]] = B and [pname[1]] = i:
-SyntaxError: invalid syntax (script.rpy, line 369)
-Resetting cache.
-Bootstrap to the start of init.init took 734.30s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.03s
-Loading script took 0.23s
-Loading save slot metadata. took 0.01s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.04s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.08s
+Initial gc. took 0.07s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
@@ -607,72 +155,9 @@ Init translation took 0.05s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.11s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.08s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]] = "B" and [pname[1]] = "i":
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
-    if renpy.python.py_eval(condition):
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
-    code = py_compile(code, 'eval')
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
-    raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
-    raise orig_e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (script.rpy, line 369)
-
-While running game code:
-  File "game/script.rpy", line 369, in script
-    if [pname[0]] = "B" and [pname[1]] = "i":
-SyntaxError: invalid syntax (script.rpy, line 369)
-Resetting cache.
-Bootstrap to the start of init.init took 806.91s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.03s
-Loading script took 0.28s
-Loading save slot metadata. took 0.02s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.05s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.06s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.04s
-Prepare screens took 0.12s
-Save pyanalysis. took 0.04s
 Save bytecode. took 0.02s
 Running _start took 0.00s
 Performance test:
@@ -689,34 +174,33 @@ Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 1110.05s
+Bootstrap to the start of init.init took 286.82s
 Early init took 0.00s
-Loader init took 0.04s
-Loading error handling took 0.04s
-Loading script took 0.55s
-Loading save slot metadata. took 0.02s
+Loader init took 0.01s
+Loading error handling took 0.03s
+Loading script took 0.19s
+Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.10s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.01s
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.15s
+Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.20s
+Initial gc. took 0.06s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.07s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.04s
-Save screen analysis took 0.11s
-Prepare screens took 0.14s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
+Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
 Interface start took 0.10s

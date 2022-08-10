@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 369: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    if [pname[0]][pname[1]] == "Bi":
-    ^
+File "game/script.rpy", line 455: expected 'simple_expression' not found.
+    show p basic at left with with dissolve
+                              ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Wed Aug 10 13:19:35 2022
+Wed Aug 10 19:03:49 2022
