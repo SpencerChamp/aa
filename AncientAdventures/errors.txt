@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 131: 'True' is not a keyword argument or valid child for the imagebutton statement.
-    focus mask True
-                   ^
+File "game/script.rpy", line 369: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    if [pname[0]][pname[1]] == "Bi":
+    ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Tue Aug  9 17:14:08 2022
+Wed Aug 10 13:19:35 2022

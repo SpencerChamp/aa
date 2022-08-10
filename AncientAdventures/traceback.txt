@@ -1,22 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 339, in script
-    jump therma_ext
-ScriptError: could not find label 'therma_ext'.
+  File "game/script.rpy", line 369, in script
+    if [pname[0]] = "B" and [pname[1]] = "i":
+SyntaxError: invalid syntax (script.rpy, line 369)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 339, in script
-    jump therma_ext
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 1974, in execute
-    rv = renpy.game.script.lookup(target)
-  File "/Applications/renpy-8.0.1-sdk/renpy/script.py", line 927, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'therma_ext'.
+  File "game/script.rpy", line 369, in script
+    if [pname[0]] = "B" and [pname[1]] = "i":
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
+    if renpy.python.py_eval(condition):
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
+    code = py_compile(code, 'eval')
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
+    raise e
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
+    raise orig_e
+  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (script.rpy, line 369)
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Tue Aug  9 19:15:02 2022
+Wed Aug 10 13:21:03 2022
