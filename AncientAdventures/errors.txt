@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 455: expected 'simple_expression' not found.
-    show p basic at left with with dissolve
-                              ^
+File "game/script.rpy", line 35: screen expects a non-empty block.
+    screen questtracker:
+                        ^
+
+File "game/script.rpy", line 37: screen expects a non-empty block.
+    screen inventory:
+                     ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Wed Aug 10 19:03:49 2022
+Thu Aug 11 19:48:29 2022

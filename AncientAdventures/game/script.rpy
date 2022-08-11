@@ -32,7 +32,12 @@ screen gui:
             text "{b}DEN: [money]{/b}"
             #textbutton "Return" action Hide("my_black_box") # Hides the box you've created, but this part may vary on how you handle screens.
 
+# screen questtracker:
+    
+# screen inventory:
+
 screen cubi_nav():
+    # modal True (problems with showing screens)
     imagebutton auto "door_%s": #ignore the magic door
         xpos 1520
         ypos 180
@@ -72,7 +77,10 @@ screen sn1_nav():
         xpos 498
         ypos 648
         focus_mask True
-        action [Hide ("sn1_nav"), Jump ("therma_int")]
+        if totalday == 1 and time == 0:
+            action [Hide ("sn1_nav"), Jump ("cant_bathe")]
+        else:
+            action [Hide ("sn1_nav"), Jump ("therma_int")]
 
 screen therma_int_nav():
     imagebutton auto "arrow_%s":
@@ -81,10 +89,10 @@ screen therma_int_nav():
         focus_mask None
         action [Hide ("therma_int_nav"), Jump ("street_n1")]
 
-screen therma_ext_nav():
-    imagebutton auto "therma_entrance_%s":
-        focus_mask True
-        action [Hide ("therma_ext_nav"), Jump ("therma_int")]
+# screen therma_ext_nav():
+#     imagebutton auto "therma_entrance_%s":
+#         focus_mask True
+#         action [Hide ("therma_ext_nav"), Jump ("therma_int")]
 
 screen forum_nav():
     imagebutton auto "arrow_%s":
@@ -175,7 +183,6 @@ screen schola_garden_nav():
             # action Play("sound", "mud.ogg")
             action [SetVariable("mud", False), SetVariable("time", time + 1)]
         
-
 screen pedestal_nav(): #maybe add dialog when clicking statue
     imagebutton auto "arrow_%s":
         xpos 20
@@ -255,7 +262,7 @@ default weekday = "SOL"
 default totalday = 0
     #rent in cub costs ~350 every 30?
 default time = 0
-    # 0 - 12, Roman hour system. 1-6 for work, 7-8 for bathing/excersie/recreation, 9 - 12 for dinner/nightlife. 
+    # 0 - 24, 12 day hours (starting at 6am) and 12 night. 1-6/7 for work, 7-9 light lunch,siesta, 7-14 for bathing/excersie/recreation/business, 14 - 17 for dinner/nightlife. 
 default money = 15
 default therma = 0
 default leaves = True
@@ -341,6 +348,11 @@ label insula_ext:
         hide p basic with dissolve
     call screen ins_nav
 
+label cant_bathe:
+    scene bg street n1
+    show screen sn1_nav
+    p "No time this morning."
+
 label street_n1:
     scene bg street n1
     call screen sn1_nav
@@ -350,20 +362,24 @@ label street_n1:
 #     call screen therma_ext_nav
 
 label therma_int:
-    if time > 10:
+    if time > 15:
         scene bg therma int night
-        $ renpy.pause(hard=True)
+        call screen therma_int_nav
     else:
         if therma < 1:
             scene bg therma int
             show a basic at right with dissolve
             show p basic at left with dissolve
             a "Welcome to the Baths of Luna."
-            menu baths:
+            menu therma_menu:
                 "What is this place?":
                     a "Our baths are famous across the Empire for rejuvenating the body, mind, and soul."
                     a "Please feel free to enjoy our various pools, gym, and library."
-                    jump baths
+                    a "Also, keep in mind our baths are mixed."
+                    show p happy
+                    pause
+                    show p basic
+                    jump therma_menu
                 "Pay to Enter":
                     a "That will be 2 denarii, please."                   
                     $ money -= 2
@@ -376,7 +392,7 @@ label therma_int:
                 "Leave":
                     show a annoyed at right
                     jump street_n1 #change to therma_ext when done
-        else: #bath times coming soon
+        else: #bath times
             $ renpy.pause(hard=True)
     call screen therma_int_nav
 
@@ -420,7 +436,7 @@ label port:
         p "Hm... Lupa told me to talk to the man in charge..."
         window hide
         pause
-        g "So! The wolf's cub decided to join us."
+        g "So! The wolf's pup decided to join us."
         show g basic at right with dissolve
         pause .5
         show p shocked at left:
@@ -448,36 +464,57 @@ label port:
         g "{i}grumbles{/i}"
         hide g basic with dissolve
         p "Well, at least I still have a job."
-        p "I should head to the schola."
         hide p basic with dissolve
-    if totalday == 1 and time == 3:
-        show g basic at right
-        show p basic at left with dissolve
-        p "nfiefwnkefjnef.wjenfwkjefnwkjefnwejf"
     else:
-        if time == 0:
+        if time < 5:
                 call screen port_g
     call screen port_nav
     
 label port_work:
-    scene bg port with fade
-    show p basic at left with dissolve
-    show g basic at right with dissolve
-    g "Well, at least you made it on time."
-    menu:
-        "Work":
-            g "Good. Let's get started. First..."
-            scene work with fade 
-            "Work was tiring. The shipments seemed to never stop coming."
-            $ time == 6
-            scene bg port
-            show g basic at right 
-            show p basic at left
-            g "Alright, decent work today. Enjoy your evening."
-            $ money += 25
-            show p happy with dissolve
-            jump port
-    $ renpy.pause(hard=True)
+    scene bg port
+    show p basic at left
+    show g basic at right
+    with dissolve
+    if totalday == 1 and time == 0:
+        g "Need me to hold your hand, pup? Get to the schola!"
+        call screen port_nav
+    if totalday == 1 and time == 2:
+        g "All done?"
+        p "Yep!"
+        g "Good. Here's half a days pay, and you're lucky to get that."
+        $ money += 15
+        g "Our collegium works as a unit. From the slaves hauling amphorae to yours truly."
+        g "Every member is vital. Any weak links and the chain breaks."
+        g "Know what happens when the chain breaks?"
+        p "Bad things. Probably."
+        g "You're young. You don't remember a time when bread wasn't on the table."
+        g "But that time is closer than you think."
+        g "One bad harvest, one empty granary, one dead city."
+        g "See you tomorrow, pup."
+        hide g basic with dissolve
+        $ time = 6
+        p "Hm."
+        show p basic at center
+        p "Well, an eventful first day."
+        p "I should head to the baths, good place to wash off the sweat and stress."
+        p "Then I could either head to Lupa's or see how the food is at the popina near my room."
+        hide p basic with dissolve
+        jump port
+    else:
+        g "Well, at least you made it on time."
+        menu:
+            "Work":
+                g "Good. Let's get started. First..."
+                scene work with fade 
+                "Work was tiring. The shipments seemed to never stop coming."
+                $ time == 6
+                scene bg port
+                show g basic at right 
+                show p basic at left
+                g "Alright, decent work today. Enjoy your evening."
+                $ money += 30
+                show p happy with dissolve
+                jump port
 
 label schola:
     scene bg schola
@@ -520,9 +557,10 @@ label pedestal:
     if totalday == 1:
         show p basic at left with dissolve
         if statue == 2:
-            p "Better wait until later to get my bulla back."
+            p "Can't get my bulla back now."
+            p "Better wait until later tonight, when no ones around."
             call screen pedestal_nav
-        if time >= 2:
+        if statue == 0:
             p "Lastly, the ever-ready protector of the gardens, noble Priapus."
             show p basic at center
             #zorder here or pedestal_nav ?
@@ -537,7 +575,7 @@ label pedestal:
                 xzoom -1
             show p shocked at left with dissolve:
                 xzoom 1
-            p "I'll definitely lose my job now. It's over. I'll have to move back to-"
+            p "I'll definitely lose my job now. It's over. I'll have to change my name, I can stow away on-"
             show p basic
             p "Unless..."
             p "Oh gods, please work."
@@ -559,7 +597,7 @@ label pedestal:
             show g basic:
                 xzoom 1
             g "But the grounds look clean enough."
-            g "Meet me back at the port for your pay."
+            g "Meet me back at the port for your pay when you're finished."
             p "Will do, thank you, sir."
             $ time += 1
             hide g basic with dissolve
