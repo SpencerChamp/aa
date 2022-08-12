@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 35: screen expects a non-empty block.
-    screen questtracker:
-                        ^
-
-File "game/script.rpy", line 37: screen expects a non-empty block.
-    screen inventory:
-                     ^
+File "game/script.rpy", line 627: end of line expected.
+    jump schola garden
+                ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Thu Aug 11 19:48:29 2022
+Fri Aug 12 23:54:33 2022

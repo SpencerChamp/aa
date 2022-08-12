@@ -38,14 +38,14 @@ screen gui:
 
 screen cubi_nav():
     # modal True (problems with showing screens)
-    imagebutton auto "door_%s": #ignore the magic door
+    imagebutton auto "door_%s":
         xpos 1520
         ypos 180
         focus_mask True
         action [Hide ("cubi_nav"), Jump ("insula_ext")]
     imagebutton auto "bed_%s":
         focus_mask True
-        if totalday == 1 and time == 0:
+        if totalday == 1 and time <= 3:
             action [Jump ("cant_sleep")]
         action [Jump ("cubi_wake")]
 
@@ -77,7 +77,7 @@ screen sn1_nav():
         xpos 498
         ypos 648
         focus_mask True
-        if totalday == 1 and time == 0:
+        if totalday == 1 and time <= 3:
             action [Hide ("sn1_nav"), Jump ("cant_bathe")]
         else:
             action [Hide ("sn1_nav"), Jump ("therma_int")]
@@ -262,7 +262,7 @@ default weekday = "SOL"
 default totalday = 0
     #rent in cub costs ~350 every 30?
 default time = 0
-    # 0 - 24, 12 day hours (starting at 6am) and 12 night. 1-6/7 for work, 7-9 light lunch,siesta, 7-14 for bathing/excersie/recreation/business, 14 - 17 for dinner/nightlife. 
+    # 0 - 24, 12 day hours (starting at 6am) and 12 night. 1-6/7 for work, 6-8 light lunch,siesta, 7-13 for bathing/excersie/recreation/afternoon business, 13 - 17 for dinner/nightlife. 
 default money = 15
 default therma = 0
 default leaves = True
@@ -312,13 +312,14 @@ label cubi_wake:
     show p basic 
     with dissolve
     if totalday == 1:
+        $ time = 2
         p "A dignified career and a new apartment..."
         p "No longer will I be the poor, orphaned whore-son."
         p "Today, I enter the noble city of Luna as a respectable citizen!"
         window hide
         pause
         show p shocked
-        p "Damn, I was supposed to be at the port before sunrise!"
+        p "Damn, I was supposed to be at the port at sunrise!"
         window hide
         hide p shocked with dissolve
     else:
@@ -339,9 +340,9 @@ label cubi:
 
 label insula_ext:
     scene bg insula
-    if totalday == 1 and time == 0:
+    if totalday == 1 and time <= 3:
         show p basic with dissolve
-        p "The port is directly South, past the Forum."
+        p "The port is directly South, past the forum."
         show p basic:
             xzoom -1
         p "If I hit the sea I've gone too far."
@@ -351,7 +352,7 @@ label insula_ext:
 label cant_bathe:
     scene bg street n1
     show screen sn1_nav
-    p "No time this morning."
+    p "As nice as a hot bath sounds... No time!"
 
 label street_n1:
     scene bg street n1
@@ -367,7 +368,7 @@ label therma_int:
         call screen therma_int_nav
     else:
         if therma < 1:
-            scene bg therma int
+            scene bg therma apo
             show a basic at right with dissolve
             show p basic at left with dissolve
             a "Welcome to the Baths of Luna."
@@ -392,15 +393,23 @@ label therma_int:
                 "Leave":
                     show a annoyed at right
                     jump street_n1 #change to therma_ext when done
-        else: #bath times
-            $ renpy.pause(hard=True)
+        else:
+            scene bg therma apo
+            call screen therma_int_nav
+
     call screen therma_int_nav
 
 label forum:
     scene bg forum
-    if totalday == 1 and time == 0:
+    if totalday == 1 and time == 2:
+        show p basic with dissolve
+        p "The forum. The heart of the city."
+        p "Seems like half of the people are as late as I am."
+        hide p basic
+        call screen forum_nav
+    if totalday == 2 and time >= 3:
         show p happy at right with dissolve
-        p "Ah, the forum. Bustling as usual."
+        p "The forum. Bustling as usual."
         "{i}Exile them!{/i}"
         show p basic at right:
             xzoom -1
@@ -430,7 +439,7 @@ label street_s1:
 
 label port:
     scene bg port
-    if totalday == 1 and time == 0:
+    if totalday == 1 and time == 2:
         show p basic at left with dissolve:
             xzoom -1
         p "Hm... Lupa told me to talk to the man in charge..."
@@ -466,7 +475,7 @@ label port:
         p "Well, at least I still have a job."
         hide p basic with dissolve
     else:
-        if time < 5:
+        if time < 6:
                 call screen port_g
     call screen port_nav
     
@@ -478,9 +487,9 @@ label port_work:
     if totalday == 1 and time == 0:
         g "Need me to hold your hand, pup? Get to the schola!"
         call screen port_nav
-    if totalday == 1 and time == 2:
+    if totalday == 1 and statue == 2:
         g "All done?"
-        p "Yep!"
+        p "Yep! Clean as a whistle!"
         g "Good. Here's half a days pay, and you're lucky to get that."
         $ money += 15
         g "Our collegium works as a unit. From the slaves hauling amphorae to yours truly."
@@ -489,15 +498,15 @@ label port_work:
         p "Bad things. Probably."
         g "You're young. You don't remember a time when bread wasn't on the table."
         g "But that time is closer than you think."
-        g "One bad harvest, one empty granary, one dead city."
         g "See you tomorrow, pup."
         hide g basic with dissolve
         $ time = 6
         p "Hm."
-        show p basic at center
+        show p basic at center with dissolve
         p "Well, an eventful first day."
-        p "I should head to the baths, good place to wash off the sweat and stress."
-        p "Then I could either head to Lupa's or see how the food is at the popina near my room."
+        show p basic:
+            xzoom -1 
+        p "I should head to the baths, the perfect place to wash off the sweat and stress."
         hide p basic with dissolve
         jump port
     else:
@@ -506,7 +515,13 @@ label port_work:
             "Work":
                 g "Good. Let's get started. First..."
                 scene work with fade 
-                "Work was tiring. The shipments seemed to never stop coming."
+                $ quote = renpy.random.choice([1,2,3])
+                if quote == 1:
+                    p "Work was tiring. The shipments seemed to never stop coming."
+                if quote == 2:
+                    p "So many amphorae... I feel like my fingers are going to fall off."
+                if quote == 3:
+                    p "Another long day. I need a snack. And a bath."
                 $ time == 6
                 scene bg port
                 show g basic at right 
@@ -517,8 +532,13 @@ label port_work:
                 jump port
 
 label schola:
+    if totalday == 2 and time == 8:
+        scene bg schola dinner
+        show g fancy at right
+        with dissolve
+
     scene bg schola
-    if totalday == 1 and time == 0:
+    if totalday == 1 and time == 2:
         show f basic at right:
             xzoom -1
         show p basic at left with dissolve
@@ -538,7 +558,7 @@ label schola:
 label schola_garden:
     scene bg schola garden
     show screen schola_garden_nav
-    if totalday == 1 and time == 0:
+    if totalday == 1 and time == 2:
         show p basic at right with dissolve:
             xzoom -1
         p "Such a quiet and peaceful spot. Despite being so close to the port."
@@ -602,7 +622,12 @@ label pedestal:
             $ time += 1
             hide g basic with dissolve
             pause
-
+            show p basic 
+            p "That was close."
+            show p basic at center:
+                xzoom -1
+            p "I can't take my bulla back now... Too many people around."
+            hide p basic with dissolve
     call screen pedestal_nav
 
     return
