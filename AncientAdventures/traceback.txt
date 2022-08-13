@@ -1,28 +1,82 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 461, in script
-    if time  0:
-SyntaxError: unexpected EOF while parsing (script.rpy, line 461)
+While loading <renpy.display.im.Image object ('…rma_apo_ent_idle.jpg') at 0x7f929019ad30>:
+  File "game/script.rpy", line 396, in script
+    call screen therma_apo_nav
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+OSError: Couldn't find file 'images/click/therma_apo_ent_idle.jpg'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 461, in script
-    if time  0:
-  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2115, in execute
-    if renpy.python.py_eval(condition):
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1078, in py_eval
-    code = py_compile(code, 'eval')
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 1015, in py_compile
+  File "game/script.rpy", line 396, in script
+    call screen therma_apo_nav
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2232, in execute
+    self.call("execute")
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 3161, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3906, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 2602, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 704, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/behavior.py", line 876, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1334, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/image.py", line 505, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/image.py", line 308, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 627, in render
+    return cache.get(self, render=True)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 295, in get
+    surf = image.load()
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 723, in load
     raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 967, in py_compile
-    raise orig_e
-  File "/Applications/renpy-8.0.1-sdk/renpy/python.py", line 960, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: unexpected EOF while parsing (script.rpy, line 461)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 688, in load
+    filelike = renpy.loader.load(self.filename)
+  File "/Applications/renpy-8.0.1-sdk/renpy/loader.py", line 820, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/click/therma_apo_ent_idle.jpg'.
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Thu Aug 11 12:46:51 2022
+Sat Aug 13 15:25:33 2022

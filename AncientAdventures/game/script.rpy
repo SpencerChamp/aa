@@ -20,6 +20,7 @@ init:
         zoom 0.33
 
 screen gui:
+    zorder 10
     frame:
         xpos 80 # offset on the x axis
         ypos 950 # offset on the y axis
@@ -80,19 +81,17 @@ screen sn1_nav():
         if totalday == 1 and time <= 3:
             action [Hide ("sn1_nav"), Jump ("cant_bathe")]
         else:
-            action [Hide ("sn1_nav"), Jump ("therma_int")]
+            action [Hide ("sn1_nav"), Jump ("therma_apo")]
 
-screen therma_int_nav():
-    imagebutton auto "arrow_%s":
-        xpos 20
-        ypos 400
-        focus_mask None
-        action [Hide ("therma_int_nav"), Jump ("street_n1")]
-
-# screen therma_ext_nav():
-#     imagebutton auto "therma_entrance_%s":
-#         focus_mask True
-#         action [Hide ("therma_ext_nav"), Jump ("therma_int")]
+screen therma_apo_nav():
+    # imagebutton auto "arrow_%s":
+    #     xpos 20
+    #     ypos 400
+    #     focus_mask None
+    #     action [Hide ("therma_apo_nav"), Jump ("street_n1")]
+    imagebutton auto "therma_apo_ent_%s":
+        focus_mask True
+        action [Hide ("therma_apo_nav"), Jump ("street_n1")]
 
 screen forum_nav():
     imagebutton auto "arrow_%s":
@@ -209,7 +208,7 @@ screen pedestal_nav(): #maybe add dialog when clicking statue
             action [Hide ("schola_garden_nav")]
 
 screen port_g():
-    imagebutton idle "g basic.png":
+    imagebutton idle "g basic":
         xpos 1200
         ypos 400
         focus_mask True
@@ -288,9 +287,9 @@ default statue = 0
 label start:
     with fade
     "It was a moonless night."
-    scene bg found with fade
+    scene bg_found with fade
     "I was left in a basket, outside a brothel."
-    scene bg baby with fade
+    scene bg_baby with fade
     "Lupa, the matron, brought me in. I had only an amulet, inscribed with my name..."
     python:
         pname = renpy.input("Name?", length=32)
@@ -299,13 +298,13 @@ label start:
             pname = "Remus"
     scene black with fade
     "I did not receive the most {i}traditional{/i} education."
-    scene bg younglife with fade
+    scene bg_younglife with fade
     "But I was treated with care, and learned much of business and accounting along the way."
     scene black with fade
     "After saving up some money, I was able to afford a small apartment. And thanks to Lupa's connections I secured a job at the port. My first day of work is tomorrow."
 
 label cubi_wake:
-    scene bg cubi int with fade
+    scene bg_cubi_int with fade
     show screen gui
     show screen cubi_nav
     call day_change()
@@ -335,11 +334,11 @@ label cant_sleep:
     jump cubi
 
 label cubi:
-    scene bg cubi int
+    scene bg_cubi_int
     call screen cubi_nav
 
 label insula_ext:
-    scene bg insula
+    scene bg_insula
     if totalday == 1 and time <= 3:
         show p basic with dissolve
         p "The port is directly South, past the forum."
@@ -350,25 +349,25 @@ label insula_ext:
     call screen ins_nav
 
 label cant_bathe:
-    scene bg street n1
+    scene bg_street_n1
     show screen sn1_nav
     p "As nice as a hot bath sounds... No time!"
 
 label street_n1:
-    scene bg street n1
+    scene bg_street_n1
     call screen sn1_nav
 
 # label therma_ext:
 #     scene bg therma ext
 #     call screen therma_ext_nav
 
-label therma_int:
+label therma_apo:
     if time > 15:
-        scene bg therma int night
-        call screen therma_int_nav
+        scene bg_therma_int_night
+        call screen therma_apo_nav
     else:
         if therma < 1:
-            scene bg therma apo
+            scene bg_therma_apo
             show a basic at right with dissolve
             show p basic at left with dissolve
             a "Welcome to the Baths of Luna."
@@ -389,18 +388,18 @@ label therma_int:
                     hide a basic with dissolve
                     hide p basic with dissolve
                     $ therma += 1
-                    jump therma_int
+                    jump therma_apo
                 "Leave":
-                    show a annoyed at right
+                    show a_annoyed at right
                     jump street_n1 #change to therma_ext when done
         else:
-            scene bg therma apo
-            call screen therma_int_nav
+            scene bg_therma_apo
+            call screen therma_apo_nav
 
-    call screen therma_int_nav
+    call screen therma_apo_nav
 
 label forum:
-    scene bg forum
+    scene bg_forum
     if totalday == 1 and time == 2:
         show p basic with dissolve
         p "The forum. The heart of the city."
@@ -415,7 +414,7 @@ label forum:
             xzoom -1
         p "Maybe a bit more than usual..."
         hide p basic with dissolve
-        scene bg forum crowd
+        scene bg_forum crowd
         show b basic 
         with dissolve
         b "We must be lenient, brothers and sister."
@@ -426,7 +425,7 @@ label forum:
         "{i}Out with the wicked!{/i}"
         b "But with only a small donation to the Church, we can strengthen our resolve and..."
         hide b basic
-        show bg forum
+        show bg_forum
         with dissolve
         show p basic
         p "Yikes."
@@ -434,11 +433,11 @@ label forum:
     call screen forum_nav
 
 label street_s1:
-    scene bg street s1
+    scene bg_street_s1
     call screen ss1_nav
 
 label port:
-    scene bg port
+    scene bg_port
     if totalday == 1 and time == 2:
         show p basic at left with dissolve:
             xzoom -1
@@ -480,7 +479,7 @@ label port:
     call screen port_nav
     
 label port_work:
-    scene bg port
+    scene bg_port
     show p basic at left
     show g basic at right
     with dissolve
@@ -523,7 +522,7 @@ label port_work:
                 if quote == 3:
                     p "Another long day. I need a snack. And a bath."
                 $ time == 6
-                scene bg port
+                scene bg_port
                 show g basic at right 
                 show p basic at left
                 g "Alright, decent work today. Enjoy your evening."
@@ -533,11 +532,11 @@ label port_work:
 
 label schola:
     if totalday == 2 and time == 8:
-        scene bg schola dinner
-        show g fancy at right
+        scene bg_schola_dinner
+        show g_fancy at right
         with dissolve
 
-    scene bg schola
+    scene bg_schola
     if totalday == 1 and time == 2:
         show f basic at right:
             xzoom -1
@@ -556,7 +555,7 @@ label schola:
     call screen schola_nav
 
 label schola_garden:
-    scene bg schola garden
+    scene bg_schola_garden
     show screen schola_garden_nav
     if totalday == 1 and time == 2:
         show p basic at right with dissolve:
@@ -572,7 +571,7 @@ label schola_garden:
     call screen schola_garden_nav
 
 label pedestal:
-    scene bg pedestal
+    scene bg_pedestal
     show screen pedestal_nav
     if totalday == 1:
         show p basic at left with dissolve
