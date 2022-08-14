@@ -1,17 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('…rma_apo_ent_idle.jpg') at 0x7f929019ad30>:
-  File "game/script.rpy", line 396, in script
-    call screen therma_apo_nav
+While running game code:
+  File "game/script.rpy", line 478, in script
+    call screen therma_lib_nav
   File "renpy/common/000statements.rpy", line 609, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-OSError: Couldn't find file 'images/click/therma_apo_ent_idle.jpg'.
+  File "game/script.rpy", line 150, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 150, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 151, in execute
+    imagebutton auto "therma_lib_pae_%s":
+Exception: Imagebutton does not have a idle image. (auto='therma_lib_pae_%s').
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 396, in script
-    call screen therma_apo_nav
+  File "game/script.rpy", line 478, in script
+    call screen therma_lib_nav
   File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2232, in execute
     self.call("execute")
   File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2220, in call
@@ -26,57 +32,35 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3906, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 2602, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 495, in renpy.display.render.render_screen
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 704, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 884, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/behavior.py", line 876, in render
-    rv = super(Button, self).render(width, height, st, at)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/layout.py", line 1334, in render
-    surf = render(child,
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/image.py", line 505, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/image.py", line 308, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 627, in render
-    return cache.get(self, render=True)
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 295, in get
-    surf = image.load()
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 723, in load
-    raise e
-  File "/Applications/renpy-8.0.1-sdk/renpy/display/im.py", line 688, in load
-    filelike = renpy.loader.load(self.filename)
-  File "/Applications/renpy-8.0.1-sdk/renpy/loader.py", line 820, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'images/click/therma_apo_ent_idle.jpg'.
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 451, in visit_all
+    callback(self)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 462, in per_interact
+    self.update()
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/script.rpy", line 150, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 150, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 151, in execute
+    imagebutton auto "therma_lib_pae_%s":
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 952, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 946, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto='therma_lib_pae_%s').
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Sat Aug 13 15:25:33 2022
+Sun Aug 14 19:11:21 2022

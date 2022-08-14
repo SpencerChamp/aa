@@ -84,14 +84,73 @@ screen sn1_nav():
             action [Hide ("sn1_nav"), Jump ("therma_apo")]
 
 screen therma_apo_nav():
-    # imagebutton auto "arrow_%s":
-    #     xpos 20
-    #     ypos 400
-    #     focus_mask None
-    #     action [Hide ("therma_apo_nav"), Jump ("street_n1")]
     imagebutton auto "therma_apo_ent_%s":
         focus_mask True
-        action [Hide ("therma_apo_nav"), Jump ("street_n1")]
+        if clothes == False:
+            action Jump ("cant_leave")
+        else:
+            action [Hide ("therma_apo_nav"), Jump ("street_n1")]
+    imagebutton auto "therma_apo_tep_%s":
+        focus_mask True
+        action [Hide ("therma_apo_nav"), Jump ("therma_tep")]
+    imagebutton auto "therma_apo_pae_%s":
+        focus_mask True
+        action [Hide ("therma_apo_nav"), Jump ("therma_pae")]
+    if clothes == True:
+        imagebutton auto "clothes_spot_%s":
+            focus_mask True
+            # action Play("sound", "clothes.ogg")
+            action SetVariable("clothes", False)
+    if clothes == False:
+        imagebutton auto "clothes_%s":
+            focus_mask True
+            xpos 1350
+            ypos 885
+            action SetVariable("clothes", True)
+            # action Play("sound", "clothes.ogg")
+
+screen therma_tep_nav():
+    imagebutton auto "therma_tep_apo_%s":
+        focus_mask True
+        action [Hide ("therma_tep_nav"), Jump ("therma_apo")]
+    imagebutton auto "therma_tep_cal_%s":
+        focus_mask True
+        action [Hide ("therma_tep_nav"), Jump ("therma_cal")]
+    imagebutton auto "therma_tep_fri_%s":
+        focus_mask True
+        action [Hide ("therma_tep_nav"), Jump ("therma_fri")]
+    imagebutton auto "strigil_%s":
+        focus_mask None
+        action []
+
+screen therma_cal_nav():
+    imagebutton auto "therma_cal_tep_%s":
+        focus_mask True
+        action [Hide ("therma_cal_nav"), Jump ("therma_tep")]
+
+screen therma_fri_nav():
+    imagebutton auto "therma_fri_tep_%s":
+        focus_mask True
+        action [Hide ("therma_fri_nav"), Jump ("therma_tep")]
+
+screen therma_pae_nav():
+    imagebutton auto "therma_pae_apo_%s":
+        focus_mask True
+        action [Hide ("therma_pae_nav"), Jump ("therma_apo")]
+    imagebutton auto "therma_pae_lib_%s":
+        focus_mask True
+        action [Hide ("therma_pae_nav"), Jump ("therma_lib")]
+    imagebutton auto "natatio_%s":
+        focus_mask True
+        action []
+    # imagebutton auto "weights_%s":
+    #     focus_mask True
+    #     action []
+
+screen therma_lib_nav():
+    imagebutton auto "therma_lib_pae_%s":
+        focus_mask True
+        action [Hide ("therma_lib_nav"), Jump ("therma_pae")]  
 
 screen forum_nav():
     imagebutton auto "arrow_%s":
@@ -99,7 +158,6 @@ screen forum_nav():
         ypos 400
         focus_mask None
         action [Hide ("forum_nav"), Jump ("street_s1")]
-        tooltip "South"
     imagebutton auto "arrow_%s":
         xpos 1850
         ypos 400
@@ -267,6 +325,7 @@ default therma = 0
 default leaves = True
 default mud = True
 default statue = 0
+default clothes = True
 
 ### More Efficient Day System? (guy was mean so i gave up) ###
     #default weekday = 0
@@ -327,11 +386,23 @@ label cubi_wake:
         hide p basic
     call screen cubi_nav
 
+###call in these three preventative labels doesnt return correctly, sticking with Jump and Jump back
+
+label cant_leave:
+    show screen therma_apo_nav
+    p "I should probably put my clothes back on..."
+    jump therma_apo
+
 label cant_sleep:
     show screen cubi_nav
     show p shocked
     p "I can't go back to sleep! I need to pay rent!"
     jump cubi
+
+label cant_bathe:
+    scene bg_street_n1
+    p "As nice as a hot bath sounds... No time!"
+    call screen sn1_nav
 
 label cubi:
     scene bg_cubi_int
@@ -348,17 +419,12 @@ label insula_ext:
         hide p basic with dissolve
     call screen ins_nav
 
-label cant_bathe:
-    scene bg_street_n1
-    show screen sn1_nav
-    p "As nice as a hot bath sounds... No time!"
-
 label street_n1:
     scene bg_street_n1
     call screen sn1_nav
 
 # label therma_ext:
-#     scene bg therma ext
+#     scene bg_therma_ext
 #     call screen therma_ext_nav
 
 label therma_apo:
@@ -380,6 +446,11 @@ label therma_apo:
                     pause
                     show p basic
                     jump therma_menu
+                "How does it work?":
+                    a "First, you should deposit your belongings in one of the available spaces here."
+                    a "Men usually prefer to then oil themselves and work out in the Paelestra, afterwards relaxing in the Tepidarium while they clean themselves with the supplied strigils."
+                    a "From that point you can freely cycle the bath rooms, or enjoy a more cereberal activity in the library."
+                    jump therma_menu
                 "Pay to Enter":
                     a "That will be 2 denarii, please."                   
                     $ money -= 2
@@ -395,8 +466,28 @@ label therma_apo:
         else:
             scene bg_therma_apo
             call screen therma_apo_nav
-
     call screen therma_apo_nav
+    $ renpy.pause(hard=True) ###activating exit twice is jumping to next inline label, maybe this helps :)
+
+label therma_pae:
+    scene bg_therma_pae
+    call screen therma_pae_nav
+
+label therma_lib:
+    scene bg_therma_lib
+    call screen therma_lib_nav
+
+label therma_tep:
+    scene bg_therma_tep
+    call screen therma_tep_nav
+
+label therma_cal:
+    scene bg_therma_cal
+    call screen therma_cal_nav
+
+label therma_fri:
+    scene bg_therma_fri
+    call screen therma_fri_nav
 
 label forum:
     scene bg_forum
@@ -584,8 +675,8 @@ label pedestal:
             show p basic at center
             #zorder here or pedestal_nav ?
             p "Let's just clean you up..."
-            "{i} crack {/i}"
             $ statue += 1
+            "{i} crack {/i}" with hpunch
             show p shocked at left
             pause
             g "...you know we have a collegium meeting tomorrow night. Everything needs to be perfect."

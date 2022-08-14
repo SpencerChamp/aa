@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 289: end of line expected.
-    scene images/bgs/bg found with fade
-                        ^
+File "game/script.rpy", line 143: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Sat Aug 13 13:04:52 2022
+Sun Aug 14 19:11:05 2022
