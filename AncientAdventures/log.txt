@@ -1,38 +1,38 @@
-Wed Aug 17 18:37:12 2022
+Wed Aug 17 22:38:50 2022
 macOS-10.16-x86_64-i386-64bit
 Ren'Py 8.0.1.22070801
  
 
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.01s
-Loader init took 0.04s
+Loader init took 0.02s
 Loading error handling took 0.05s
 Loading script took 0.36s
 Loading save slot metadata. took 0.04s
 Loading persistent took 0.00s
 Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.08s
+Running init code took 0.07s
 Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
+Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Dump and make backups. took 0.06s
+Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
 Initial gc. took 0.03s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.04s
+Init translation took 0.05s
 Build styles took 0.00s
 Load screen analysis took 0.04s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.08s
+Prepare screens took 0.09s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
+Save bytecode. took 0.04s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.35s
+Interface start took 0.36s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -44,17 +44,104 @@ Version: b'2.1 INTEL-16.0.49'
 Display Info: None
 Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
 Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 15.90s
+Bootstrap to the start of init.init took 71.79s
 Early init took 0.00s
 Loader init took 0.01s
 Loading error handling took 0.04s
-Loading script took 0.24s
+Loading script took 0.23s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 78.25s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.04s
+Loading script took 0.43s
 Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
 Running init code took 0.05s
-Loading analysis data took 0.03s
+Loading analysis data took 0.08s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.15s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 94.49s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.03s
+Loading script took 0.22s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.04s
+Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Dump and make backups. took 0.05s
@@ -65,6 +152,1157 @@ DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.06s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 163.53s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.04s
+Loading script took 0.57s
+Loading save slot metadata. took 0.15s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 248.94s
+Early init took 0.00s
+Loader init took 0.03s
+Loading error handling took 0.03s
+Loading script took 0.39s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.07s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.11s
+DPI scale factor: 1.000000
+Creating interface object took 0.01s
+Cleaning stores took 0.00s
+Init translation took 0.09s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.04s
+Prepare screens took 0.15s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1051.67s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.03s
+Loading script took 0.34s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.11s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 1055.25s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.03s
+Loading script took 0.17s
+Loading save slot metadata. took 0.05s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 540, in script
+    call screen therma_lib_nav
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2232, in execute
+    self.call("execute")
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 3161, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 451, in visit_all
+    callback(self)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 462, in per_interact
+    self.update()
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/script.rpy", line 187, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 187, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 188, in execute
+    imagebutton auto "therma_lib_pae_%s":
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 952, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 946, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto='therma_lib_pae_%s').
+
+While running game code:
+  File "game/script.rpy", line 540, in script
+    call screen therma_lib_nav
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/script.rpy", line 187, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 187, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 188, in execute
+    imagebutton auto "therma_lib_pae_%s":
+Exception: Imagebutton does not have a idle image. (auto='therma_lib_pae_%s').
+Resetting cache.
+Bootstrap to the start of init.init took 4200.52s
+Early init took 0.00s
+Loader init took 0.03s
+Loading error handling took 0.03s
+Loading script took 0.38s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.07s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.10s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.05s
+Save bytecode. took 0.03s
+Running _start took 0.01s
+Performance test:
+Interface start took 0.13s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 4207.05s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.04s
+Loading script took 0.55s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.04s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.07s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.13s
+Save pyanalysis. took 0.02s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 4212.00s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.11s
+Loading save slot metadata. took 0.02s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.03s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 536, in script
+    call screen pae_snack_nav
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2232, in execute
+    self.call("execute")
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 3147, in call_screen
+    show_screen(_screen_name, _transient=True, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 1185, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen pae_snack_nav is not known.
+
+
+While running game code:
+  File "game/script.rpy", line 536, in script
+    call screen pae_snack_nav
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+Exception: Screen pae_snack_nav is not known.
+
+
+Full traceback:
+  File "game/script.rpy", line 536, in script
+    call screen pae_snack_nav
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2232, in execute
+    self.call("execute")
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 3147, in call_screen
+    show_screen(_screen_name, _transient=True, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 1185, in show_screen
+    raise Exception("Screen %s is not known.\n" % (name[0],))
+Exception: Screen pae_snack_nav is not known.
+
+
+While running game code:
+  File "game/script.rpy", line 536, in script
+    call screen pae_snack_nav
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+Exception: Screen pae_snack_nav is not known.
+
+Resetting cache.
+Bootstrap to the start of init.init took 5530.33s
+Early init took 0.00s
+Loader init took 0.04s
+Loading error handling took 0.04s
+Loading script took 0.34s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 489: expected ':' not found.
+    label therma_attendant
+                          ^
+DPI scale factor: 1.000000
+Interface start took 0.14s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5751.83s
+Early init took 0.00s
+Loader init took 0.04s
+Loading error handling took 0.03s
+Loading script took 0.31s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 107: Line is indented, but the preceding hotspot statement does not expect a block. Please check this line's indentation.
+    if clothes == True:
+    ^
+
+File "game/script.rpy", line 492: expected ':' not found.
+    label therma_attendant
+                          ^
+DPI scale factor: 1.000000
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5767.10s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.24s
+Loading save slot metadata. took 0.02s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 107: Line is indented, but the preceding hotspot statement does not expect a block. Please check this line's indentation.
+    if clothes == True:
+    ^
+
+File "game/script.rpy", line 492: expected ':' not found.
+    label therma_attendant
+                          ^
+DPI scale factor: 1.000000
+Interface start took 0.21s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5789.90s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.02s
+Loading script took 0.21s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 492: expected ':' not found.
+    label therma_attendant
+                          ^
+DPI scale factor: 1.000000
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5790.53s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 492: expected ':' not found.
+    label therma_attendant
+                          ^
+DPI scale factor: 1.000000
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5807.28s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.03s
+Loading script took 0.45s
+Loading save slot metadata. took 0.02s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 494: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
+    show a basic at right with dissolve
+    ^
+DPI scale factor: 1.000000
+Interface start took 0.13s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5839.13s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.03s
+Loading script took 0.49s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.07s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.12s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5990.41s
+Early init took 0.00s
+Loader init took 0.03s
+Loading error handling took 0.04s
+Loading script took 0.29s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 511: expected menuitem
+    if therma < 1 "Pay to Enter":
+    ^
+DPI scale factor: 1.000000
+Interface start took 0.14s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5992.12s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.03s
+Loading script took 0.21s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 511: expected menuitem
+    if therma < 1 "Pay to Enter":
+    ^
+DPI scale factor: 1.000000
+Interface start took 0.14s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 5995.41s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.05s
+Loading script took 0.23s
+Loading save slot metadata. took 0.01s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 511: expected menuitem
+    if therma < 1 "Pay to Enter":
+    ^
+DPI scale factor: 1.000000
+Interface start took 0.12s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6007.67s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.17s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 511: expected menuitem
+    if therma < 1 
+    ^
+DPI scale factor: 1.000000
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6022.96s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.04s
+Loading script took 0.28s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 511: expected menuitem
+    if therma_pass < 1:
+    ^
+DPI scale factor: 1.000000
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6038.25s
+Early init took 0.00s
+Loader init took 0.03s
+Loading error handling took 0.05s
+Loading script took 0.32s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 511: expected menuitem
+    if therma_pass < 1:
+    ^
+DPI scale factor: 1.000000
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6041.49s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.19s
+Loading save slot metadata. took 0.02s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 511: expected menuitem
+    if therma_pass < 1:
+    ^
+DPI scale factor: 1.000000
+Interface start took 0.10s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6080.81s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.05s
+Loading script took 0.49s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.05s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.04s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.08s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6105.48s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.03s
+Loading script took 0.33s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.01s
+Save screen analysis took 0.03s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6482.87s
+Early init took 0.00s
+Loader init took 0.04s
+Loading error handling took 0.04s
+Loading script took 0.31s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+
+File "game/script.rpy", line 521: reached end of line when expecting ':'.
+    if therma_pass 
+                   ^
+DPI scale factor: 1.000000
+Interface start took 0.17s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6528.28s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.04s
+Loading script took 0.39s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.06s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.05s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.08s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.03s
+Save screen analysis took 0.04s
+Prepare screens took 0.15s
+Save pyanalysis. took 0.03s
+Save bytecode. took 0.03s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6530.29s
+Early init took 0.00s
+Loader init took 0.13s
+Loading error handling took 0.08s
+Loading script took 0.39s
+Loading save slot metadata. took 0.04s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.07s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Dump and make backups. took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.13s
+Build styles took 0.01s
+Load screen analysis took 0.05s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.16s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.14s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 6535.71s
+Early init took 0.00s
+Loader init took 0.01s
+Loading error handling took 0.02s
+Loading script took 0.12s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.03s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 7151.70s
+Early init took 0.00s
+Loader init took 0.03s
+Loading error handling took 0.03s
+Loading script took 0.47s
+Loading save slot metadata. took 0.03s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.06s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.01s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.01s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.22s
+Save pyanalysis. took 0.17s
+Save bytecode. took 0.04s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.16s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 7161.11s
+Early init took 0.00s
+Loader init took 0.04s
+Loading error handling took 0.03s
+Loading script took 0.35s
+Loading save slot metadata. took 0.02s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.04s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
+Dump and make backups. took 0.08s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.07s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
+Build styles took 0.00s
+Load screen analysis took 0.00s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
+Prepare screens took 0.10s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.02s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.09s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 7163.10s
+Early init took 0.00s
+Loader init took 0.02s
+Loading error handling took 0.03s
+Loading script took 0.15s
+Loading save slot metadata. took 0.02s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.05s
+Loading analysis data took 0.03s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.06s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.06s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.06s
 Build styles took 0.00s
 Load screen analysis took 0.04s
 Analyze screens took 0.00s
@@ -84,173 +1322,19 @@ Vendor: "b'Intel Inc.'"
 Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
 Version: b'2.1 INTEL-16.0.49'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 69.07s
-Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.04s
-Loading script took 0.50s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.11s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.08s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.07s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.07s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.03s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.09s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 133.14s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.03s
-Loading script took 0.44s
-Loading save slot metadata. took 0.04s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.07s
-Loading analysis data took 0.04s
-Analyze and compile ATL took 0.01s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.10s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.06s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.05s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.14s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.09s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 213.59s
-Early init took 0.00s
-Loader init took 0.01s
-Loading error handling took 0.03s
-Loading script took 0.33s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
-Running init code took 0.04s
-Loading analysis data took 0.03s
-Analyze and compile ATL took 0.00s
-Index archives took 0.00s
-Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
-Dump and make backups. took 0.06s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
-Initial gc. took 0.06s
-DPI scale factor: 1.000000
-Creating interface object took 0.00s
-Cleaning stores took 0.00s
-Init translation took 0.06s
-Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.02s
-Save screen analysis took 0.03s
-Prepare screens took 0.10s
-Save pyanalysis. took 0.04s
-Save bytecode. took 0.02s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.08s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 236.99s
+Bootstrap to the start of init.init took 7178.81s
 Early init took 0.00s
 Loader init took 0.03s
-Loading error handling took 0.04s
-Loading script took 0.33s
+Loading error handling took 0.03s
+Loading script took 0.32s
 Loading save slot metadata. took 0.04s
 Loading persistent took 0.00s
 
-File "game/script.rpy", line 139: Line is indented, but the preceding hotspot statement does not expect a block. Please check this line's indentation.
-    alpha None
-    ^
-DPI scale factor: 1.000000
-Interface start took 0.14s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 246.29s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.03s
-Loading script took 0.25s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 139: Line is indented, but the preceding hotspot statement does not expect a block. Please check this line's indentation.
-    alpha False
+File "game/script.rpy", line 495: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    xzoom -1
     ^
 DPI scale factor: 1.000000
 Interface start took 0.13s
@@ -263,39 +1347,14 @@ Vendor: "b'Intel Inc.'"
 Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
 Version: b'2.1 INTEL-16.0.49'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
 Maximum texture size: 4096x4096
 Resetting cache.
-Bootstrap to the start of init.init took 248.04s
+Bootstrap to the start of init.init took 7185.06s
 Early init took 0.00s
-Loader init took 0.01s
+Loader init took 0.02s
 Loading error handling took 0.02s
-Loading script took 0.20s
-Loading save slot metadata. took 0.03s
-Loading persistent took 0.00s
-
-File "game/script.rpy", line 139: Line is indented, but the preceding hotspot statement does not expect a block. Please check this line's indentation.
-    alpha False
-    ^
-DPI scale factor: 1.000000
-Interface start took 0.13s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'Intel Inc.'"
-Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
-Version: b'2.1 INTEL-16.0.49'
-Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
-Maximum texture size: 4096x4096
-Resetting cache.
-Bootstrap to the start of init.init took 252.78s
-Early init took 0.00s
-Loader init took 0.02s
-Loading error handling took 0.03s
-Loading script took 0.14s
+Loading script took 0.28s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
@@ -303,6 +1362,7 @@ Running init code took 0.06s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
+Backing up script files to '/Users/spencerchampion/Library/RenPy/backups/AncientAdventures':
 Dump and make backups. took 0.05s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
@@ -312,15 +1372,15 @@ Creating interface object took 0.00s
 Cleaning stores took 0.00s
 Init translation took 0.05s
 Build styles took 0.00s
-Load screen analysis took 0.05s
-Analyze screens took 0.00s
-Save screen analysis took 0.00s
+Load screen analysis took 0.01s
+Analyze screens took 0.02s
+Save screen analysis took 0.03s
 Prepare screens took 0.09s
-Save pyanalysis. took 0.00s
+Save pyanalysis. took 0.03s
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.10s
+Interface start took 0.09s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -330,5 +1390,105 @@ Vendor: "b'Intel Inc.'"
 Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
 Version: b'2.1 INTEL-16.0.49'
 Display Info: None
-Screen sizes: virtual=(1920, 1080) physical=(1338, 753) drawable=(1338, 753)
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
 Maximum texture size: 4096x4096
+Resetting cache.
+Bootstrap to the start of init.init took 7239.24s
+Early init took 0.00s
+Loader init took 0.03s
+Loading error handling took 0.04s
+Loading script took 0.26s
+Loading save slot metadata. took 0.02s
+Loading persistent took 0.00s
+Faled to initialize steam: OSError('dlopen(/Applications/renpy-8.0.1-sdk/lib/py3-mac-x86_64/libsteam_api.dylib, 6): image not found')
+Running init code took 0.06s
+Loading analysis data took 0.04s
+Analyze and compile ATL took 0.00s
+Index archives took 0.00s
+Dump and make backups. took 0.07s
+Cleaning cache took 0.00s
+Making clean stores took 0.00s
+Initial gc. took 0.08s
+DPI scale factor: 1.000000
+Creating interface object took 0.00s
+Cleaning stores took 0.00s
+Init translation took 0.05s
+Build styles took 0.00s
+Load screen analysis took 0.04s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.09s
+Save pyanalysis. took 0.00s
+Save bytecode. took 0.00s
+Running _start took 0.00s
+Performance test:
+Interface start took 0.11s
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 1440, 900)
+swap interval: 1 frames
+Windowed mode.
+Vendor: "b'Intel Inc.'"
+Renderer: b'Intel HD Graphics 5000 OpenGL Engine'
+Version: b'2.1 INTEL-16.0.49'
+Display Info: None
+Screen sizes: virtual=(1920, 1080) physical=(1440, 847) drawable=(1440, 847)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 554, in script
+    call screen therma_lib_nav
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2232, in execute
+    self.call("execute")
+  File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2220, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/statements.py", line 281, in call
+    return method(parsed, *args, **kwargs)
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/exports.py", line 3161, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs) # type: ignore
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 451, in visit_all
+    callback(self)
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/core.py", line 3804, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 462, in per_interact
+    self.update()
+  File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/script.rpy", line 198, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 198, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 199, in execute
+    imagebutton auto "therma_lib_pae_%s":
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 952, in _imagebutton
+    idle = choice(idle, idle_image, "idle", required=True)
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 946, in choice
+    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
+Exception: Imagebutton does not have a idle image. (auto='therma_lib_pae_%s').
+
+While running game code:
+  File "game/script.rpy", line 554, in script
+    call screen therma_lib_nav
+  File "renpy/common/000statements.rpy", line 609, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+  File "game/script.rpy", line 198, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 198, in execute
+    screen therma_lib_nav():
+  File "game/script.rpy", line 199, in execute
+    imagebutton auto "therma_lib_pae_%s":
+Exception: Imagebutton does not have a idle image. (auto='therma_lib_pae_%s').

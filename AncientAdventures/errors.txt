@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 139: Line is indented, but the preceding hotspot statement does not expect a block. Please check this line's indentation.
-    alpha False
+File "game/script.rpy", line 495: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    xzoom -1
     ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Wed Aug 17 18:41:21 2022
+Thu Aug 18 00:38:29 2022

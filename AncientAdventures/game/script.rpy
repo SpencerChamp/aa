@@ -7,9 +7,10 @@ define v = Character("Venus", color="FF0082")
 define c = Character("Cupid", color="FF93CA")
 define g = Character("Gurges", color="4F4F4F")
 define lup = Character("Lupa")
-define a = Character("Attendant")
+define a = Character("Therma Attendant")
 define f = Character("Felix")
 define b = Character("Bishop")
+define s = Character("Serving Woman")
 
 ### Screens / Image Buttons  (ill move into screens.rpy laterrrrrr) ###
 
@@ -102,11 +103,14 @@ screen therma_apo_nav():
     #         action SetVariable("clothes", False)
     imagemap auto "bg_therma_apo_%s":
         alpha True
-        hotspot (20, 440, 317, 622) action [Hide ("therma_apo_nav"), Jump ("street_n1")]
+        hotspot (20, 440, 317, 622):
+            if clothes == True:
+                action [Hide ("therma_apo_nav"), Jump ("street_n1")]
+            else:
+                action [Hide ("therma_apo_nav"), Jump ("cant_leave")]
         hotspot (825, 441, 255, 384) action [Hide ("therma_apo_nav"), Jump ("therma_tep")]
         hotspot (1651, 534, 261, 146) action [Hide ("therma_apo_nav"), Jump ("therma_pae")]
-        hotspot (365, 468, 338, 446) action [Hide ("therma_apo_nav"), Jump ("therma_apo")]
-        
+        hotspot (365, 468, 338, 446) action [Hide ("therma_apo_nav"), Jump ("therma_attendant")]
         if clothes == True:
             hotspot (1218, 756, 420, 306) action SetVariable("clothes", False)
     if clothes == False:
@@ -162,6 +166,13 @@ screen therma_pae_nav():
     # imagebutton auto "weights_%s":
     #     focus_mask True
     #     action []
+    imagemap auto "bg_therma_pae_%s":
+        alpha True
+        hotspot (1236, 76, 172, 439) action [Hide ("therma_tep_nav"), Jump ("therma_apo")]
+        hotspot (684, 190, 325, 334) action [Hide ("therma_tep_nav"), Jump ("pae_snack")]
+        hotspot (234, 235, 172, 399) action [Hide ("therma_tep_nav"), Jump ("therma_lib")]
+        hotspot (400, 882, 476, 178) action [Hide ("therma_tep_nav"), Jump ("pae_weights")]
+        hotspot (1552, 708, 366, 372) action [Hide ("therma_tep_nav"), Jump ("pae_nat")]
 
 screen pae_nat_nav():
         imagebutton auto "arrow_%s":
@@ -175,7 +186,14 @@ screen pae_weights_nav():
             xpos 20
             ypos 400
             focus_mask None
-            action [Hide ("pae_swim_nav"), Jump ("therma_pae")]
+            action [Hide ("pae_weights_nav"), Jump ("therma_pae")]
+
+screen pae_snack_nav():
+        imagebutton auto "arrow_%s":
+            xpos 20
+            ypos 400
+            focus_mask None
+            action [Hide ("pae_snack_nav"), Jump ("therma_pae")]
 
 screen therma_lib_nav():
     imagebutton auto "therma_lib_pae_%s":
@@ -363,18 +381,14 @@ default leaves = True
 default mud = True
 default statue = 0
 
-
 ### Personal Variables ###
 
 default money = 15
-default therma_pass = 0
+default therma_pass = False
 default clothes = True
-
-### Daily Flags? (Like a variable class that can wipe all at sleep?) ###
-    #default dailyFlags = []
-    #dailyFlags[worked] = 0
-    #later, use: dailyFlags[event_ID] = value
-
+default skill_swim = 0
+default skill_str = 0
+default skill_lib = 0
 
 # The game starts here.
 
@@ -467,49 +481,55 @@ label therma_apo:
         scene bg_therma_int_night
         call screen therma_apo_nav
     else:
-        if therma_pass < 1:
-            scene bg_therma_apo_ground
-            show a basic at right with dissolve
-            show p basic at left with dissolve
-            a "Welcome to the Baths of Luna."
-            menu apo_menu:
-                "What is this place?":
-                    a "Our baths are famous across the Empire for rejuvenating the body, mind, and soul."
-                    a "Please feel free to enjoy our various pools, gym, and library."
-                    a "Also, keep in mind our baths are mixed."
-                    show p happy
-                    pause
-                    show p basic
-                    jump apo_menu
-                "How does it work?":
-                    a "First, you should deposit your belongings in one of the available spaces here."
-                    a "Men usually prefer to then oil themselves and work out in the Paelestra, afterwards relaxing in the Tepidarium while they clean themselves with the supplied strigils."
-                    a "From that point you can freely cycle the bath rooms, or enjoy a more cereberal activity in the library."
-                    jump apo_menu
-                "Pay to Enter":
-                    a "That will be 2 denarii, please."                   
-                    $ money -= 2
-                    p "Here you go."
-                    a "Thank you! Enjoy the baths."
-                    hide a basic with dissolve
-                    hide p basic with dissolve
-                    $ therma_pass += 1
-                    jump therma_apo
-                "Leave":
-                    show a_annoyed at right
-                    jump street_n1 #change to therma_ext when done
+        if therma_pass == False:
+            jump therma_attendant
         else:
             scene bg_therma_apo
             call screen therma_apo_nav
     call screen therma_apo_nav
     $ renpy.pause(hard=True) ###activating exit twice is jumping to next inline label, maybe this helps :)
 
+label therma_attendant:
+    scene bg_therma_apo_att
+    show p basic at right with dissolve:
+        xzoom -1
+    a "Welcome to the Baths of Luna."
+    menu apo_menu:
+        "What is this place?":
+            a "Our baths are famous across the Empire for rejuvenating the body, mind, and soul."
+            a "Please feel free to enjoy our various pools, gym, and library."
+            a "Also, keep in mind our baths are mixed."
+            show p happy
+            pause
+            show p basic
+            jump apo_menu
+        "What should I do?":
+            a "First, you should deposit your belongings in one of the available spaces here."
+            a "Men usually prefer to then oil themselves and work out in the Paelestra, afterwards relaxing in the Tepidarium while they clean themselves with the supplied strigils."
+            a "From that point you can freely cycle the bath rooms, or enjoy a more cereberal activity in the library."
+            jump apo_menu
+        "Pay to Enter" if therma_pass == False:
+            a "That will be 2 denarii, please."                   
+            $ money -= 2
+            p "Here you go."
+            a "Thank you! Enjoy the baths."
+            hide a basic with dissolve
+            hide p basic with dissolve
+            $ therma_pass = True
+            jump therma_apo
+        "Leave":
+            if therma_pass == False:
+                show a_annoyed at right
+                jump street_n1 #change to therma_ext when done
+            else:
+                jump therma_apo
+
 label therma_pae:
     scene bg_therma_pae
     call screen therma_pae_nav
 
 label pae_nat:
-    scene bg_therma_pae_nat
+    scene bg_therma_pae_blur
     call screen pae_nat_nav
     show p basic at left with dissolve
     menu nat:
@@ -522,10 +542,11 @@ label pae_nat:
             # $ skill_swim += 1
 
 label pae_weights:
-    scene bg_therma_pae_weights
+    scene bg_therma_pae_blur
+    call screen pae_weights_nav
 
 label pae_snack:
-    scene bg_therma_pae_snack
+    scene bg_therma_pae_blur
     call screen pae_snack_nav
 
 label therma_lib:
