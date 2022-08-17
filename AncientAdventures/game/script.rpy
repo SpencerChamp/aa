@@ -14,7 +14,7 @@ define b = Character("Bishop")
 ### Screens / Image Buttons  (ill move into screens.rpy laterrrrrr) ###
 
 init:
-    transform flip:
+    transform flip: #to make arrows point right
         xzoom -1
     transform thirdzoom:
         zoom 0.33
@@ -26,12 +26,12 @@ screen gui:
         ypos 950 # offset on the y axis
         xsize 200 # Width of your frame
         ysize 120 # Height of your frame
-        #background "my_image.png" #Assuming it is located in the images folder.
+        #background "my_image.png"
         vbox:
             align(0.5, 0.5)
             text "{b}[weekday]{/b}"
             text "{b}DEN: [money]{/b}"
-            #textbutton "Return" action Hide("my_black_box") # Hides the box you've created, but this part may vary on how you handle screens.
+            #textbutton "Return" action Hide("") # Hides the box you've created, but this part may vary on how you handle screens.
 
 # screen questtracker:
     
@@ -73,7 +73,6 @@ screen sn1_nav():
         at flip
         focus_mask None
         action [Hide ("sn1_nav"), Jump ("insula_ext")]
-        tooltip "Back home"
     imagebutton auto "thermasign_%s":
         xpos 498
         ypos 648
@@ -84,44 +83,61 @@ screen sn1_nav():
             action [Hide ("sn1_nav"), Jump ("therma_apo")]
 
 screen therma_apo_nav():
-    imagebutton auto "therma_apo_ent_%s":
-        focus_mask True
-        if clothes == False:
-            action Jump ("cant_leave")
-        else:
-            action [Hide ("therma_apo_nav"), Jump ("street_n1")]
-    imagebutton auto "therma_apo_tep_%s":
-        focus_mask True
-        action [Hide ("therma_apo_nav"), Jump ("therma_tep")]
-    imagebutton auto "therma_apo_pae_%s":
-        focus_mask True
-        action [Hide ("therma_apo_nav"), Jump ("therma_pae")]
-    if clothes == True:
-        imagebutton auto "clothes_spot_%s":
-            focus_mask True
-            # action Play("sound", "clothes.ogg")
-            action SetVariable("clothes", False)
+    # imagebutton auto "therma_apo_ent_%s":
+    #     focus_mask True
+    #     if clothes == False:
+    #         action Jump ("cant_leave")
+    #     else:
+    #         action [Hide ("therma_apo_nav"), Jump ("street_n1")]
+    # imagebutton auto "therma_apo_tep_%s":
+    #     focus_mask True
+    #     action [Hide ("therma_apo_nav"), Jump ("therma_tep")]
+    # imagebutton auto "therma_apo_pae_%s":
+    #     focus_mask True
+    #     action [Hide ("therma_apo_nav"), Jump ("therma_pae")]
+    # if clothes == True:
+    #     imagebutton auto "clothes_spot_%s":
+    #         focus_mask True
+    #         # action Play("sound", "clothes.ogg")
+    #         action SetVariable("clothes", False)
+    imagemap auto "bg_therma_apo_%s":
+        alpha True
+        hotspot (20, 440, 317, 622) action [Hide ("therma_apo_nav"), Jump ("street_n1")]
+        hotspot (825, 441, 255, 384) action [Hide ("therma_apo_nav"), Jump ("therma_tep")]
+        hotspot (1651, 534, 261, 146) action [Hide ("therma_apo_nav"), Jump ("therma_pae")]
+        hotspot (365, 468, 338, 446) action [Hide ("therma_apo_nav"), Jump ("therma_apo")]
+        
+        if clothes == True:
+            hotspot (1218, 756, 420, 306) action SetVariable("clothes", False)
     if clothes == False:
         imagebutton auto "clothes_%s":
-            focus_mask True
             xpos 1350
             ypos 885
             action SetVariable("clothes", True)
             # action Play("sound", "clothes.ogg")
 
+        
 screen therma_tep_nav():
-    imagebutton auto "therma_tep_apo_%s":
-        focus_mask True
-        action [Hide ("therma_tep_nav"), Jump ("therma_apo")]
-    imagebutton auto "therma_tep_cal_%s":
-        focus_mask True
-        action [Hide ("therma_tep_nav"), Jump ("therma_cal")]
-    imagebutton auto "therma_tep_fri_%s":
-        focus_mask True
-        action [Hide ("therma_tep_nav"), Jump ("therma_fri")]
-    imagebutton auto "strigil_%s":
-        focus_mask None
-        action []
+    # imagebutton auto "therma_tep_apo_%s":
+    #     focus_mask True
+    #     action [Hide ("therma_tep_nav"), Jump ("therma_apo")]
+    # imagebutton auto "therma_tep_cal_%s":
+    #     focus_mask True
+    #     action [Hide ("therma_tep_nav"), Jump ("therma_cal")]
+    # imagebutton auto "therma_tep_fri_%s":
+    #     focus_mask True
+    #     action [Hide ("therma_tep_nav"), Jump ("therma_fri")]
+    # imagebutton auto "strigil_%s":
+    #     focus_mask None
+    #     action []
+    imagemap auto "bg_therma_tep_%s":
+        alpha True
+        hotspot (1056, 178, 259, 444) action [Hide ("therma_tep_nav"), Jump ("therma_apo")]
+        hotspot (60, 455, 158, 536) action [Hide ("therma_tep_nav"), Jump ("therma_fri")]
+        hotspot (1701, 434, 188, 587) action [Hide ("therma_tep_nav"), Jump ("therma_cal")]
+        hotspot (363, 881, 182, 191) action [Hide ("therma_tep_nav"), Jump ("therma_tep")]
+            # strigil
+
 
 screen therma_cal_nav():
     imagebutton auto "therma_cal_tep_%s":
@@ -142,10 +158,24 @@ screen therma_pae_nav():
         action [Hide ("therma_pae_nav"), Jump ("therma_lib")]
     imagebutton auto "natatio_%s":
         focus_mask True
-        action []
+        action [Hide ("therma_pae_nav"), Jump ("pae_swim")]
     # imagebutton auto "weights_%s":
     #     focus_mask True
     #     action []
+
+screen pae_nat_nav():
+        imagebutton auto "arrow_%s":
+            xpos 20
+            ypos 400
+            focus_mask None
+            action [Hide ("pae_swim_nav"), Jump ("therma_pae")]
+
+screen pae_weights_nav():
+        imagebutton auto "arrow_%s":
+            xpos 20
+            ypos 400
+            focus_mask None
+            action [Hide ("pae_swim_nav"), Jump ("therma_pae")]
 
 screen therma_lib_nav():
     imagebutton auto "therma_lib_pae_%s":
@@ -312,21 +342,6 @@ label day_change:
         $ weekday = ":/"
     return
 
-### Variables ###
-
-default weekday_number = 1
-default weekday = "SOL"
-default totalday = 0
-    #rent in cub costs ~350 every 30?
-default time = 0
-    # 0 - 24, 12 day hours (starting at 6am) and 12 night. 1-6/7 for work, 6-8 light lunch,siesta, 7-13 for bathing/excersie/recreation/afternoon business, 13 - 17 for dinner/nightlife. 
-default money = 15
-default therma = 0
-default leaves = True
-default mud = True
-default statue = 0
-default clothes = True
-
 ### More Efficient Day System? (guy was mean so i gave up) ###
     #default weekday = 0
     #label day_change
@@ -334,6 +349,26 @@ default clothes = True
     #return
     #define day_names = [ "SOL", "LUN", "MAR", "MER", "IOV", "VEN", "SAT" ]
     #$ today = day_names(weekday)
+
+
+### Environmental Variables ###
+
+default weekday_number = 1
+default weekday = "SOL"
+default totalday = 0
+    #rent in cub costs ~350 every 30?
+default time = 0
+    # 0 - 24, 12 day hours (starting at 6am) and 12 night. 1-6/7 for work, 6-8 light lunch,siesta, 7-13 for bathing/excersie/recreation/afternoon business, 13 - 17 for dinner/nightlife. 
+default leaves = True
+default mud = True
+default statue = 0
+
+
+### Personal Variables ###
+
+default money = 15
+default therma_pass = 0
+default clothes = True
 
 ### Daily Flags? (Like a variable class that can wipe all at sleep?) ###
     #default dailyFlags = []
@@ -432,12 +467,12 @@ label therma_apo:
         scene bg_therma_int_night
         call screen therma_apo_nav
     else:
-        if therma < 1:
-            scene bg_therma_apo
+        if therma_pass < 1:
+            scene bg_therma_apo_ground
             show a basic at right with dissolve
             show p basic at left with dissolve
             a "Welcome to the Baths of Luna."
-            menu therma_menu:
+            menu apo_menu:
                 "What is this place?":
                     a "Our baths are famous across the Empire for rejuvenating the body, mind, and soul."
                     a "Please feel free to enjoy our various pools, gym, and library."
@@ -445,12 +480,12 @@ label therma_apo:
                     show p happy
                     pause
                     show p basic
-                    jump therma_menu
+                    jump apo_menu
                 "How does it work?":
                     a "First, you should deposit your belongings in one of the available spaces here."
                     a "Men usually prefer to then oil themselves and work out in the Paelestra, afterwards relaxing in the Tepidarium while they clean themselves with the supplied strigils."
                     a "From that point you can freely cycle the bath rooms, or enjoy a more cereberal activity in the library."
-                    jump therma_menu
+                    jump apo_menu
                 "Pay to Enter":
                     a "That will be 2 denarii, please."                   
                     $ money -= 2
@@ -458,7 +493,7 @@ label therma_apo:
                     a "Thank you! Enjoy the baths."
                     hide a basic with dissolve
                     hide p basic with dissolve
-                    $ therma += 1
+                    $ therma_pass += 1
                     jump therma_apo
                 "Leave":
                     show a_annoyed at right
@@ -473,9 +508,34 @@ label therma_pae:
     scene bg_therma_pae
     call screen therma_pae_nav
 
+label pae_nat:
+    scene bg_therma_pae_nat
+    call screen pae_nat_nav
+    show p basic at left with dissolve
+    menu nat:
+        "Go for a swim":
+            p "A cool swim sounds perfect right now."
+            hide p basic with dissolve
+            scene bg_pae_swim 
+            "Nothing like a few laps under the Sun."
+            $ time += 1
+            # $ skill_swim += 1
+
+label pae_weights:
+    scene bg_therma_pae_weights
+
+label pae_snack:
+    scene bg_therma_pae_snack
+    call screen pae_snack_nav
+
 label therma_lib:
     scene bg_therma_lib
     call screen therma_lib_nav
+
+label lib_read:
+    scene bg_therma_lib_read
+    call screen lib_read_nav
+
 
 label therma_tep:
     scene bg_therma_tep
@@ -609,7 +669,7 @@ label port_work:
                 if quote == 1:
                     p "Work was tiring. The shipments seemed to never stop coming."
                 if quote == 2:
-                    p "So many amphorae... I feel like my fingers are going to fall off."
+                    p "So much cargo... I feel like my fingers are going to fall off."
                 if quote == 3:
                     p "Another long day. I need a snack. And a bath."
                 $ time == 6
@@ -639,7 +699,7 @@ label schola:
         p "Ah..."
         f "Don't worry, we left you the old garden to take care of."
         p "Very thoughtful of you."
-        f "Better hurry up, the boss usually does inspections before lunch."
+        f "Better hurry up, the boss wants these areas spotless before the day ends."
         p "Copy that."
         hide f basic with dissolve
         hide p basic with dissolve

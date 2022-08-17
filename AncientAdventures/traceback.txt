@@ -1,23 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 478, in script
-    call screen therma_lib_nav
+  File "game/script.rpy", line 488, in script
+    call screen therma_apo_nav
   File "renpy/common/000statements.rpy", line 609, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
-  File "game/script.rpy", line 150, in execute
-    screen therma_lib_nav():
-  File "game/script.rpy", line 150, in execute
-    screen therma_lib_nav():
-  File "game/script.rpy", line 151, in execute
-    imagebutton auto "therma_lib_pae_%s":
-Exception: Imagebutton does not have a idle image. (auto='therma_lib_pae_%s').
+  File "game/script.rpy", line 85, in execute
+    screen therma_apo_nav():
+  File "game/script.rpy", line 85, in execute
+    screen therma_apo_nav():
+  File "game/script.rpy", line 110, in execute
+    imagemap auto "bg_therma_%s":
+Exception: Could not find a ground image for imagemap.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 478, in script
-    call screen therma_lib_nav
+  File "game/script.rpy", line 488, in script
+    call screen therma_apo_nav
   File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2232, in execute
     self.call("execute")
   File "/Applications/renpy-8.0.1-sdk/renpy/ast.py", line 2220, in call
@@ -48,19 +48,19 @@ Full traceback:
     self.update()
   File "/Applications/renpy-8.0.1-sdk/renpy/display/screen.py", line 653, in update
     self.screen.function(**self.scope)
-  File "game/script.rpy", line 150, in execute
-    screen therma_lib_nav():
-  File "game/script.rpy", line 150, in execute
-    screen therma_lib_nav():
-  File "game/script.rpy", line 151, in execute
-    imagebutton auto "therma_lib_pae_%s":
-  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 952, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 946, in choice
-    raise Exception("Imagebutton does not have a %s image. (auto=%r)." % (name, auto))
-Exception: Imagebutton does not have a idle image. (auto='therma_lib_pae_%s').
+  File "game/script.rpy", line 85, in execute
+    screen therma_apo_nav():
+  File "game/script.rpy", line 85, in execute
+    screen therma_apo_nav():
+  File "game/script.rpy", line 110, in execute
+    imagemap auto "bg_therma_%s":
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 1254, in _imagemap
+    ground = pick(ground, ("ground", "idle"), idle)
+  File "/Applications/renpy-8.0.1-sdk/renpy/ui.py", line 1252, in pick
+    raise Exception("Could not find a %s image for imagemap." % name[0])
+Exception: Could not find a ground image for imagemap.
 
 macOS-10.16-x86_64-i386-64bit x86_64
 Ren'Py 8.0.1.22070801
 Fantasy Ren'py GUI template 1.0
-Sun Aug 14 19:11:21 2022
+Wed Aug 17 16:26:28 2022

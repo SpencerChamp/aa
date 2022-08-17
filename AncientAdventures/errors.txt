@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 143: Indentation mismatch.
+File "game/script.rpy", line 139: Line is indented, but the preceding hotspot statement does not expect a block. Please check this line's indentation.
+    alpha False
+    ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Sun Aug 14 19:11:05 2022
+Wed Aug 17 18:41:21 2022
